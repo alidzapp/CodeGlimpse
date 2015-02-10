@@ -1,0 +1,7 @@
+@function decrease($size, $percentage) {
+	@return $size * (1 - (strip-units($percentage) / 100));
+}
+
+@function increase($size, $percentage) {
+	@return $size * (1 + (strip-units($percentage) / 100));
+}

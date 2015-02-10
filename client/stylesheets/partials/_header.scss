@@ -32,7 +32,7 @@ header a {
 	font-family: 'Questrial', sans-serif;
 	font-weight: 100;
 	float: right;
-	font-size: 12pt;
+	font-size: 16pt;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #555;
@@ -48,7 +48,6 @@ header a {
 
 	&:first-child {
 		float: left;
-		font-size: 16pt
 	}
 
 	&:not(:first-child) {
