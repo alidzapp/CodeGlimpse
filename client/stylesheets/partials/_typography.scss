@@ -48,15 +48,25 @@ a {
 	color: $primary-color;
 }
 
-@media (max-width: 70rem) {
-	body {
-		background-color: #00cdaa;
-	}
+p {
+	padding: 0;
+	margin: 1rem 0 0;
+	color: #666;
+	text-align: justify;
+	font-family: 'Questrial', sans-serif;
+	font-weight: 100;
+	font-size: 1.25rem;
+	line-height: 1.5;
+
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
-@media (max-width: 40rem) {
-	body {
-		font-size: 80%;
-		background-color: #a00;
-	}
+@media (max-width: $tablet-width) {
+	// Coming later
+}
+
+@media (max-width: $phone-width) {
+	// Coming later
 }
