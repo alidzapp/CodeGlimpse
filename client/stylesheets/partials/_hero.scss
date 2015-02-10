@@ -1,0 +1,14 @@
+.hero {
+	position: relative;
+	width: 100%;
+	min-height: 80vh;
+	height: auto;
+	background: #eee;
+
+	@include display(flex);
+
+	div {
+		margin: auto;
+		text-align: center;
+	}
+}
