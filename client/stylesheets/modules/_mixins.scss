@@ -1,0 +1,11 @@
+@mixin font-size($size) {
+	font-size: $size;
+
+	@media #{$tablet-width} {
+		font-size: decrease($size, 15%)
+	}
+
+	@media #{$phone-width} {
+		font-size: decrease($size, 30%)
+	}
+}
