@@ -1,10 +1,10 @@
 Router.configure
-	loadingTemplate: 'loading'
+	loadingTemplate:  'loading'
 	notFoundTemplate: 'notfound'
-	layoutTemplate: 'layout'
+	layoutTemplate:   'layout'
 
 Router.route '/', ->
 	@render 'home'
 
-Router.route '/login', ->
-	@render 'home'
+Router.route '/@:username', ->
+	@render 'profile'
