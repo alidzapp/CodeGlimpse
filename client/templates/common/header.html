@@ -1,6 +1,12 @@
 <template name="header">
 	<header class="transparent">
 		<a href="/">Code Glimpse</a>
-		<a href="/login" class="login">Login</a>
+
+		{{ #if currentUser }}
+			<a href="/@{{ username }}">{{ name }}</a>
+			<a href="/logout">Logout</a>
+		{{ else }}
+			<a href="/login">Login or register</a>
+		{{ /if}}
     </header>
 </template>

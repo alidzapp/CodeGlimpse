@@ -8,31 +8,23 @@ header {
 	line-height: 30px;
 	background-color: #fff;
 	font-family: sans-serif;
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
 	z-index: 1;
 
-	@include transition(.2s);
+	@include transition(background .2s);
 	@include user-select(none);
 
 	&.transparent {
 		position: absolute;
-		height: 100px;
-		padding-top: 15px;
-		padding-bottom: 15px;
+		top: 15px;
 		background-color: transparent;
-		box-shadow: none;
-
-		a {
-			color: #fff;
-		}
 	}
 }
 
 header a {
-	font-family: 'Questrial', sans-serif;
+	font-family: sans-serif;
 	font-weight: 100;
 	float: right;
-	font-size: 16pt;
+	font-size: 14pt;
 	margin-top: 20px;
 	margin-bottom: 20px;
 	color: #555;
