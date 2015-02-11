@@ -3,10 +3,10 @@
 		<a href="/">Code Glimpse</a>
 
 		{{ #if currentUser }}
-			<a href="/@{{ username }}">{{ name }}</a>
-			<a href="/logout">Logout</a>
+			<a class="logout" href="/">Logout</a>
+			<a href="/@{{ currentUser.services.github.username }}">{{ currentUser.profile.name }}</a>
 		{{ else }}
-			<a href="/login">Login or register</a>
+			<a class="login" href="/">Login</a>
 		{{ /if}}
     </header>
 </template>

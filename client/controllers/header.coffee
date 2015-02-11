@@ -6,6 +6,13 @@ if Meteor.isClient
 			else
 				$('header').addClass 'transparent'
 
+	Template.header.helpers
+		currentUser: () ->
+			Meteor.user()
+
 	Template.header.events
 		'click .login': (event, template) ->
-			console.log 'log me in!'
+			Meteor.loginWithGithub()
+
+		'click .logout': (event, template) ->
+			Meteor.logout()
