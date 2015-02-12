@@ -5,8 +5,7 @@ if Meteor.isClient
 
 	Template.layout.events
 		'click .login': (event, template) ->
-			if not Meteor.user()?
-				Meteor.loginWithGithub()
+			Meteor.loginWithGithub()
 
 		'click .logout': (event, template) ->
 			Meteor.logout()
