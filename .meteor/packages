@@ -8,9 +8,9 @@ meteor-platform
 autopublish
 insecure
 coffeescript
-fourseven:scss@1.0.0
 iron:router
 wolves:bourbon
 wolves:neat
 accounts-github
 accounts-ui-unstyled
+fourseven:scss@1.0.0
