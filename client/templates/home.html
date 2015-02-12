@@ -1,10 +1,17 @@
 <template name="home">
 	<section id="home">
+	{{ #if currentUser }}
+		<section class="hero">
+			<div>
+				<h1>Dashboard</h1>
+			</div>
+		</section>
+	{{ else }}
 		<section class="hero">
 			<div>
 				<h1>Code Glimpse</h1>
 				<h4>A social network for developers, by developers.</h4>
-				<a href="/login">Login or register</a>
+				<a class="login" href="/">Login or register</a>
 			</div>
 		</section>
 		<section class="segment">
@@ -13,5 +20,6 @@
 				We are happy to anounce that users can now register and login using Github!
 			</p>
 		</section>
+	{{ /if }}
 	</section>
 </template>
