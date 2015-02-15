@@ -1,0 +1,30 @@
+#profile {
+	.hero {
+		@extend %hero;
+		min-height: 65vh;
+		padding: 4.5rem 20%;
+		background-color: #fff;
+
+		aside {
+			margin: auto;
+			text-align: center;
+			width: 12.5rem;
+
+			img {
+				width: 12.5rem;
+				height: 12.5rem;
+				border-radius: 50%;
+			}
+		}
+
+		article {
+			margin: auto;
+			margin-left: 4.5rem;
+			@include flex(1);
+
+			h4 {
+				color: #ccc;
+			}
+		}
+	}
+}
