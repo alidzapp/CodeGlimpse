@@ -1,13 +1,19 @@
 <template name="profile">
-	<div class="hero">
-		<div>
-			<h1>Some awesome page</h1>
+	<section id="profile">
+		<div class="hero">
+			<aside>
+				<img src="https://pbs.twimg.com/profile_images/490007044833820672/QOEwdLwJ_400x400.jpeg" alt="">
+			</aside>
+			<article>
+				<h3>{{ currentUser.profile.name }}</h3>
+				<h4>{{ currentUser.services.github.username }}</h4>
+			</article>
 		</div>
-	</div>
-	<p>
-		<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed hic deserunt temporibus reprehenderit ipsum animi magni, tempore, dolor nemo excepturi suscipit qui corrupti nisi expedita magnam, provident impedit, iste labore?</span>
-		<span>Animi nostrum et voluptate temporibus consectetur magnam, possimus excepturi at voluptatem cupiditate debitis, facere nemo iure ea repudiandae numquam minima accusantium optio itaque, mollitia quasi! Iste, voluptatem voluptates. Nihil, voluptatum.</span>
-		<span>Nulla veritatis, iusto animi obcaecati itaque alias, aut laudantium impedit inventore rem placeat, adipisci minus delectus dolores eveniet magnam debitis quod temporibus tenetur quae in! Blanditiis perspiciatis a aliquam hic!</span>
-		<span>Temporibus officia ipsum consequatur labore deleniti, impedit excepturi culpa ipsa ut officiis quos, tenetur optio eligendi dolorem dolores dolorum dolor. Incidunt id hic, laudantium odio corporis nemo ullam dolor facere.</span>
-	</p>
+		<p>
+			<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed hic deserunt temporibus reprehenderit ipsum animi magni, tempore, dolor nemo excepturi suscipit qui corrupti nisi expedita magnam, provident impedit, iste labore?</span>
+			<span>Animi nostrum et voluptate temporibus consectetur magnam, possimus excepturi at voluptatem cupiditate debitis, facere nemo iure ea repudiandae numquam minima accusantium optio itaque, mollitia quasi! Iste, voluptatem voluptates. Nihil, voluptatum.</span>
+			<span>Nulla veritatis, iusto animi obcaecati itaque alias, aut laudantium impedit inventore rem placeat, adipisci minus delectus dolores eveniet magnam debitis quod temporibus tenetur quae in! Blanditiis perspiciatis a aliquam hic!</span>
+			<span>Temporibus officia ipsum consequatur labore deleniti, impedit excepturi culpa ipsa ut officiis quos, tenetur optio eligendi dolorem dolores dolorum dolor. Incidunt id hic, laudantium odio corporis nemo ullam dolor facere.</span>
+		</p>
+	</section>
 </template>
