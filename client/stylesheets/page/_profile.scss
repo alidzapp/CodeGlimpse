@@ -1,9 +1,11 @@
 #profile {
 	.hero {
 		@extend %hero;
-		min-height: 65vh;
-		padding: 4.5rem 20%;
+		min-height: 50vh;
+		min-height: auto;
+		padding: 9rem 20% 4.5rem;
 		background-color: #fff;
+		@include flex-direction(row);
 
 		aside {
 			margin: auto;
@@ -24,6 +26,25 @@
 
 			h4 {
 				color: #ccc;
+			}
+		}
+	}
+
+	// Media queries
+	@media #{$tablet-width} {
+		.hero {
+			padding: 9rem 10% 4.5rem;
+		}
+	}
+
+	@media #{$phone-width} {
+		.hero {
+			padding: 9rem 5% 4.5rem;
+			@include flex-direction(column);
+
+			aside, article {
+				text-align: center;
+				margin: auto;
 			}
 		}
 	}

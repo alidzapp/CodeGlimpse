@@ -2,8 +2,13 @@
 	.hero {
 		@extend %hero;
 
+		min-height: 80vh;
 		background-color: #fff;
 		padding: 4.5rem 0;
+
+		div {
+			@include vertically-centered;
+		}
 
 		h1, h4 {
 			width: 100%;
