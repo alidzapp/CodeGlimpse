@@ -1,4 +1,8 @@
 #profile {
+	@include display(flex);
+	@include flex-direction(column);
+	@include align-items(stretch);
+
 	.hero {
 		@extend %hero;
 		min-height: 50vh;
@@ -32,6 +36,12 @@
 				@extend %button;
 			}
 		}
+	}
+
+	.timeline {
+		@extend %timeline;
+		padding: 1.5rem 20%;
+
 	}
 
 	// Media queries

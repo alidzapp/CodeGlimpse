@@ -1,0 +1,37 @@
+%timeline {
+	position: relative;
+	padding: 1.5rem;
+
+	@include display(flex);
+	@include flex-direction(row);
+
+	&:after {
+		content: "";
+		position: absolute;
+		left: calc(20% + 12.5rem);
+		top: 0;
+		height: 100%;
+		width: .2rem;
+		background-color: rgba(0, 0, 0, .1);
+	}
+
+	aside {
+		width: 12.5rem;
+		z-index: 1;
+		margin: auto;
+		color: #888;
+		font-family: "questrial", sans-serif;
+	}
+
+	article {
+		@include flex(1);
+		margin-left: 4.5rem;
+		text-align: left;
+		padding: 1.5rem;
+		background-color: #fff;
+
+		p {
+			color: #444;
+		}
+	}
+}
