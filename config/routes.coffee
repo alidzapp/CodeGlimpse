@@ -7,8 +7,8 @@ Router.route '/', ->
 	@render 'home'
 
 Router.route '/@:username', ->
-	# user = Lists.findOne({})
-	if false
-		@render 'profile'
-	else
-		@next()
+	# Fetch user by username in url
+	@render 'profile', {
+		data: ->
+			user = Meteor.users.findOne({})
+	}
