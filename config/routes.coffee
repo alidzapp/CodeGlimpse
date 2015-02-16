@@ -7,4 +7,8 @@ Router.route '/', ->
 	@render 'home'
 
 Router.route '/@:username', ->
-	@render 'profile'
+	# user = Lists.findOne({})
+	if false
+		@render 'profile'
+	else
+		@next()

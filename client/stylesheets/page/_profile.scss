@@ -3,7 +3,7 @@
 		@extend %hero;
 		min-height: 50vh;
 		min-height: auto;
-		padding: 9rem 20% 4.5rem;
+		padding: 6.75rem 20% 6.75rem;
 		background-color: #fff;
 		@include flex-direction(row);
 
@@ -33,18 +33,22 @@
 	// Media queries
 	@media #{$tablet-width} {
 		.hero {
-			padding: 9rem 10% 4.5rem;
+			padding: 6.75rem 10% 6.75rem;
 		}
 	}
 
 	@media #{$phone-width} {
 		.hero {
-			padding: 9rem 5% 4.5rem;
+			padding: 6.75rem 5% 3.5rem;
 			@include flex-direction(column);
 
 			aside, article {
 				text-align: center;
 				margin: auto;
+			}
+
+			article {
+				margin-top: 2rem;
 			}
 		}
 	}
