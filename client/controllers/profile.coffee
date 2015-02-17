@@ -10,6 +10,6 @@ if Meteor.isClient
 			Session.set('active', not active)
 
 			if active
-				button.html 'following'
-			else
 				button.html 'follow'
+			else
+				button.html 'following'

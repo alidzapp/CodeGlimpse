@@ -3,7 +3,7 @@
 	padding: 1.5rem;
 
 	@include display(flex);
-	@include flex-direction(row);
+	@include flex-direction(column);
 
 	&:after {
 		content: "";
@@ -15,23 +15,59 @@
 		background-color: rgba(0, 0, 0, .1);
 	}
 
-	aside {
-		width: 12.5rem;
-		z-index: 1;
-		margin: auto;
-		color: #888;
-		font-family: "questrial", sans-serif;
+	.post {
+		@include display(flex);
+		@include flex-direction(row);
+
+		aside {
+			width: 12.5rem;
+			z-index: 1;
+			margin: auto;
+			color: #888;
+			font-family: "questrial", sans-serif;
+		}
+
+		article {
+			@include flex(1);
+			margin-left: 4.5rem;
+			text-align: left;
+			padding: 1.5rem;
+			background-color: #fff;
+
+			p {
+				color: #444;
+			}
+		}
 	}
 
-	article {
-		@include flex(1);
-		margin-left: 4.5rem;
-		text-align: left;
-		padding: 1.5rem;
-		background-color: #fff;
+	@media #{$tablet-width} {
+		padding: 1.5rem !important;
 
-		p {
-			color: #444;
+		&:after {
+			left: calc(10% + 12.5rem);
+		}
+	}
+
+	@media #{$phone-width} {
+		padding: 1.5rem !important;
+
+		.post {
+			width: 100%;
+			@include flex-direction(column);
+
+			aside {
+				text-align: left;
+				margin: 0 0 1.5rem;
+			}
+
+			article {
+				width: 100%;
+				margin: 0 auto 3rem;
+			}
+		}
+
+		&:after {
+			display: none;
 		}
 	}
 }
