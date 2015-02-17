@@ -45,22 +45,24 @@
 		@include align-items();
 
 		article {
-			position: relative;
 			background-color: #fff;
 			text-align: left;
 			margin: 0.75rem;
+
+			@include display(inline-flex);
+			@include flex(1);
 
 			a {
 				color: #444;
 				padding: 1.5rem;
 				display: block;
 
+				@include flex(1);
+
 				&:hover {
 					background-color: #fafafa;
 				}
 			}
-
-			@include flex(1);
 
 			h4 {
 				font-size: 1.25rem;

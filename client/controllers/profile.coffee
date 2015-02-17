@@ -4,7 +4,7 @@ if Meteor.isClient
 			'active' if Session.get('active') is true
 
 	Template.profile.events
-		'click a': (event, template) ->
+		'click .hero a': (event, template) ->
 			button = $(event.target)
 			active = button.hasClass 'active'
 			Session.set('active', not active)
