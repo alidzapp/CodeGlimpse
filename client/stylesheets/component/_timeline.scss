@@ -1,73 +1,51 @@
-%timeline {
-	position: relative;
-	padding: 1.5rem;
+// %timeline {
+// 	position: relative;
+// 	padding: 1.5rem;
 
-	@include display(flex);
-	@include flex-direction(column);
+// 	@include display(flex);
+// 	@include flex-direction(column);
 
-	&:after {
-		content: "";
-		position: absolute;
-		left: calc(20% + 12.5rem);
-		top: 0;
-		height: 100%;
-		width: .2rem;
-		background-color: rgba(0, 0, 0, .1);
-	}
+// 	.post {
+// 		@include display(flex);
+// 		@include flex-direction(row);
+// 		margin: 0 0 .2rem;
 
-	.post {
-		@include display(flex);
-		@include flex-direction(row);
+// 		article {
+// 			@include flex(1);
+// 			text-align: left;
+// 			padding: 1.5rem;
 
-		aside {
-			width: 12.5rem;
-			z-index: 1;
-			margin: auto;
-			color: #888;
-			font-family: "questrial", sans-serif;
-		}
+// 			p {
+// 				color: #444;
+// 			}
+// 		}
+// 	}
 
-		article {
-			@include flex(1);
-			margin-left: 4.5rem;
-			text-align: left;
-			padding: 1.5rem;
-			background-color: #fff;
+// 	@media #{$tablet-width} {
+// 		padding: 1.5rem !important;
+// 	}
 
-			p {
-				color: #444;
-			}
-		}
-	}
+// 	@media #{$phone-width} {
+// 		padding: 1.5rem !important;
 
-	@media #{$tablet-width} {
-		padding: 1.5rem !important;
+// 		.post {
+// 			width: 100%;
+// 			@include flex-direction(column);
 
-		&:after {
-			left: calc(10% + 12.5rem);
-		}
-	}
+// 			aside {
+// 				margin: 0 0 1.5rem;
+// 				background-color: transparent;
 
-	@media #{$phone-width} {
-		padding: 1.5rem !important;
+// 				span {
+// 					text-align: left;
+// 					margin: 0;
+// 				}
+// 			}
 
-		.post {
-			width: 100%;
-			@include flex-direction(column);
-
-			aside {
-				text-align: left;
-				margin: 0 0 1.5rem;
-			}
-
-			article {
-				width: 100%;
-				margin: 0 auto 3rem;
-			}
-		}
-
-		&:after {
-			display: none;
-		}
-	}
-}
+// 			article {
+// 				width: 100%;
+// 				margin: 0 auto 3rem;
+// 			}
+// 		}
+// 	}
+// }
