@@ -38,16 +38,17 @@
 	}
 
 	.posts {
-		padding: 0.75rem 10%;
+		padding: 0.75rem;
+		max-width: 80%;
+		margin: 0 auto;
 		overflow-x: hidden;
 
 		@include display(flex);
-		@include flex-direction(row);
-		@include align-items();
+		@include flex-flow(row wrap);
+		@include justify-content(center);
 
 		article {
-			min-width: 20rem;
-			width: calc(100% / 3);
+			width: calc((100% / 3) - 2.25rem);
 			background-color: #fff;
 			text-align: left;
 			margin: 0.75rem;
@@ -82,6 +83,14 @@
 		.hero {
 			padding: 6.75rem 10% 6.75rem;
 		}
+
+		.posts {
+			max-width: 100%;
+
+			article {
+				width: calc(50% - 1.5rem);
+			}
+		}
 	}
 
 	@media #{$phone-width} {
@@ -96,6 +105,16 @@
 
 			article {
 				margin-top: 2rem;
+			}
+		}
+
+		.posts {
+			padding: 0;
+			margin-top: 1px;
+
+			article {
+				width: 100%;
+				margin: 0;
 			}
 		}
 	}
