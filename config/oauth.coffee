@@ -1,5 +1,5 @@
 Meteor.startup () ->
-	# Remove it in case it already exists
+	# Remove it in case it already exists - might want to replace with upsert
 	Accounts.loginServiceConfiguration.remove({
 		service: 'github'
 	})

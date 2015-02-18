@@ -39,18 +39,20 @@
 
 	.posts {
 		padding: 0.75rem 10%;
+		overflow-x: hidden;
 
 		@include display(flex);
 		@include flex-direction(row);
 		@include align-items();
 
 		article {
+			min-width: 20rem;
+			width: calc(100% / 3);
 			background-color: #fff;
 			text-align: left;
 			margin: 0.75rem;
 
 			@include display(inline-flex);
-			@include flex(1);
 
 			a {
 				color: #444;
