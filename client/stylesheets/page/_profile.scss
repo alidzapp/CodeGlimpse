@@ -40,7 +40,7 @@
 	header {
 		position: relative;
 		width: 100%;
-		padding: 0.75rem 1.5rem;
+		padding: 0.75rem 1.5rem 0;
 		text-align: center;
 		text-transform: uppercase;
 		font-family: sans-serif;
@@ -52,7 +52,7 @@
 			position: absolute;
 			right: 0.75rem;
 			color: $primary-color;
-			visibility: hidden;
+			// visibility: hidden;
 		}
 	}
 
@@ -62,10 +62,10 @@
 
 		@include display(flex);
 		@include flex-flow(row wrap);
-		@include justify-content(center);
+		@include justify-content(space-between);
 
 		article {
-			width: calc((100% / 3) - 2.25rem);
+			width: calc((100% / 3) - 1.5rem);
 			background-color: #fff;
 			text-align: left;
 			margin: 0.75rem;
@@ -101,12 +101,7 @@
 			padding: 6.75rem 10% 6.75rem;
 		}
 
-		header a {
-			visibility: visible;
-		}
-
 		.posts {
-			padding: 0.75rem;
 			max-width: 100%;
 
 			article {
@@ -133,6 +128,7 @@
 		header {
 			text-align: left;
 			background-color: #fff;
+			padding: 0.75rem 1.5rem;
 
 			a {
 				position: relative;
