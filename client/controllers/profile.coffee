@@ -1,6 +1,6 @@
 if Meteor.isClient
 	Template.profile.helpers
-		active: () ->
+		active: ->
 			'active' if Session.get('active') is true
 
 	Template.profile.events

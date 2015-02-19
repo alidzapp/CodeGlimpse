@@ -10,5 +10,5 @@ Router.route '/@:username', ->
 	# Fetch user by username in url
 	@render 'profile', {
 		data: ->
-			user = Meteor.users.findOne({})
+			Meteor.users.findOne({})
 	}
