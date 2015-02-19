@@ -7,8 +7,8 @@ Router.route '/', ->
 	@render 'home'
 
 Router.route '/@:username', ->
-	# Fetch user by username in url
 	@render 'profile', {
 		data: ->
 			Meteor.users.findOne({})
+			# user = Meteor.users.find username: @params.username
 	}

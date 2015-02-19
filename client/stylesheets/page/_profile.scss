@@ -51,8 +51,11 @@
 		a {
 			position: absolute;
 			right: 0.75rem;
-			color: $primary-color;
-			// visibility: hidden;
+			color: #444;
+
+			&:hover {
+				text-decoration: underline;
+			}
 		}
 	}
 
@@ -103,6 +106,7 @@
 
 		.posts {
 			max-width: 100%;
+			padding: 0 0.75rem;
 
 			article {
 				width: calc(50% - 1.5rem);
