@@ -9,6 +9,5 @@ Router.route '/', ->
 Router.route '/@:username', ->
 	@render 'profile', {
 		data: ->
-			Meteor.users.findOne({})
-			# user = Meteor.users.find username: @params.username
+			Meteor.users.find('services.github.username': @params.username).fetch()[0]
 	}
