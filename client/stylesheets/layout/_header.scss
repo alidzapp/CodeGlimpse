@@ -1,4 +1,4 @@
-header {
+body > header {
 	position: fixed;
 	left: 0;
 	top: 0;
@@ -6,11 +6,11 @@ header {
 	height: 4.5rem;
 	padding: 0 5%;
 	line-height: 30px;
-	background-color: #fff;
+	background-color: rgba(255, 255, 255, 0.98);
 	font-family: sans-serif;
 	z-index: 1;
 
-	@include transition(background .2s);
+	@include transition(background .2s, box-shadow .2s);
 	@include user-select(none);
 
 	&.transparent {
@@ -20,7 +20,7 @@ header {
 	}
 }
 
-header a {
+body > header a {
 	font-family: sans-serif;
 	font-weight: 100;
 	float: right;
@@ -44,5 +44,11 @@ header a {
 
 	&:not(:first-child) {
 		margin-left: 20px;
+	}
+}
+
+@media #{$phone-width} {
+	body > header:not(.transparent) {
+		box-shadow: 0 2px 2px #f2f2f2;
 	}
 }
