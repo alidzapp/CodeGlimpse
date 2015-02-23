@@ -10,7 +10,7 @@ body > header {
 	font-family: sans-serif;
 	z-index: 1;
 
-	@include transition(background .2s);
+	@include transition(background .2s, box-shadow .2s);
 	@include user-select(none);
 
 	&.transparent {
@@ -44,5 +44,11 @@ body > header a {
 
 	&:not(:first-child) {
 		margin-left: 20px;
+	}
+}
+
+@media #{$phone-width} {
+	body > header:not(.transparent) {
+		box-shadow: 0 2px 2px #f2f2f2;
 	}
 }
