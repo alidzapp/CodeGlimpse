@@ -1,14 +1,19 @@
 #profile {
+	@include display(flex);
+	@include flex-direction(column);
+	@include align-items(stretch);
+
 	.hero {
 		@extend %hero;
-		min-height: 65vh;
-		padding: 4.5rem 20%;
+		padding: 6.75rem 20% 6.75rem;
 		background-color: #fff;
+		@include flex-direction(row);
 
 		aside {
 			margin: auto;
 			text-align: center;
 			width: 12.5rem;
+			@include user-select(none);
 
 			img {
 				width: 12.5rem;
@@ -24,6 +29,127 @@
 
 			h4 {
 				color: #ccc;
+			}
+
+			a {
+				@extend %button;
+			}
+		}
+	}
+
+	header {
+		position: relative;
+		width: 100%;
+		padding: 0.75rem 1.5rem 0;
+		text-align: center;
+		text-transform: uppercase;
+		font-family: sans-serif;
+		font-weight: 100;
+		color: #888;
+		border-top: 1px solid #f2f2f2;
+
+		a {
+			position: absolute;
+			right: 0.75rem;
+			color: #444;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+
+	.posts {
+		padding: 0 5% 0.75rem;
+		overflow-x: hidden;
+
+		@include display(flex);
+		@include flex-flow(row wrap);
+		@include justify-content(space-between);
+
+		article {
+			width: calc((100% / 3) - 1.5rem);
+			background-color: #fff;
+			text-align: left;
+			margin: 0.75rem;
+
+			@include display(inline-flex);
+
+			a {
+				color: #444;
+				padding: 1.5rem;
+				display: block;
+
+				@include flex(1);
+
+				&:hover {
+					background-color: #fafafa;
+				}
+			}
+
+			h4 {
+				font-size: 1.25rem;
+			}
+
+			p {
+				color: #aaa;
+				font-size: 1rem;
+			}
+		}
+	}
+
+	// Media queries
+	@media #{$tablet-width} {
+		.hero {
+			padding: 6.75rem 10% 6.75rem;
+		}
+
+		.posts {
+			max-width: 100%;
+			padding: 0 0.75rem;
+
+			article {
+				width: calc(50% - 1.5rem);
+			}
+		}
+	}
+
+	@media #{$phone-width} {
+		.hero {
+			padding: 6.75rem 5% 3.5rem;
+			@include flex-direction(column);
+
+			aside, article {
+				text-align: center;
+				margin: auto;
+			}
+
+			article {
+				margin-top: 2rem;
+			}
+		}
+
+		header {
+			text-align: left;
+			background-color: #fff;
+			padding: 0.75rem 1.5rem;
+
+			a {
+				position: relative;
+				float: right;
+				right: 0;
+				margin: 0;
+				visibility: visible;
+			}
+		}
+
+		.posts {
+			padding: 0;
+			margin-top: 1px;
+
+			article {
+				width: 100%;
+				margin: 0;
 			}
 		}
 	}

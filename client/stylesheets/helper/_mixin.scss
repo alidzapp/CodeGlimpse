@@ -9,3 +9,8 @@
 		font-size: decrease($size, 35%)
 	}
 }
+
+@mixin vertically-centered {
+	margin: auto;
+	text-align: center;
+}
