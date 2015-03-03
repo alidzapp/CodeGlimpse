@@ -1,0 +1,6 @@
+ApiKeys = {
+	github: {
+		client: '',
+		key: ''
+	}
+}

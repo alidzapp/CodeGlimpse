@@ -1,0 +1,68 @@
+<template name="profile">
+	<section id="profile">
+		<div class="hero">
+			<aside>
+				<img src="/images/avatar.jpg" alt="">
+			</aside>
+			<article>
+				<h3>{{ profile.name }}</h3>
+				<h4>{{ services.github.username }}</h4>
+				<a class="{{ active }}">Follow</a>
+			</article>
+		</div>
+		<div class="latest posts"><!-- Max 6 results -->
+			<header>
+				<span>Latest posts</span>
+				<a href="/@{{ services.github.username }}/posts">All posts &nbsp;&nbsp;&gt;</a>
+			</header>
+			<article>
+				<a href="">
+					<h4>Lorem impsum dolor sit amet.</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					</p>
+				</a>
+			</article>
+			<article>
+				<a href="">
+					<h4>Lorem impsum dolor sit amet.</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
+					</p>
+				</a>
+			</article>
+			<article>
+				<a href="">
+					<h4>Lorem impsum dolor sit amet.</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
+					</p>
+				</a>
+			</article>
+			<article>
+				<a href="">
+					<h4>Lorem impsum dolor sit amet.</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+					</p>
+				</a>
+			</article>
+			<article>
+				<a href="">
+					<h4>Lorem impsum dolor sit amet.</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
+					</p>
+				</a>
+			</article>
+			<article>
+				<a href="">
+					<h4>Lorem impsum dolor sit amet.</h4>
+					<p>
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
+					</p>
+				</a>
+			</article>
+		</div>
+	</section>
+</template>
