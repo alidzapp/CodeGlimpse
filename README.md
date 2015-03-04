@@ -23,4 +23,4 @@ If you'd like to contribute to Code Glimpse, you need to
 
 
 ## License
--[MIT License](LICENSE)
+[MIT License](LICENSE)
