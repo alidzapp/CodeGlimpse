@@ -1,1 +1,4 @@
 .meteor/local
+
+# User has to create this from api_keys.coffee.example with his/ her own keys
+lib/api_keys.coffee
