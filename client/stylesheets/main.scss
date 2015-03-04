@@ -5,27 +5,27 @@
 @import "neat/neat";
 
 // Helper
-@import "helper/function";
-@import "helper/mixin";
-@import "helper/variable";
+@import "helpers/function";
+@import "helpers/mixin";
+@import "helpers/variable";
 
 // Base
 @import "base/reset";
 @import "base/typography";
 
 // Component
-@import "component/button";
-@import "component/hero";
-@import "component/loading";
-@import "component/navigation";
+@import "components/button";
+@import "components/hero";
+@import "components/loading";
+@import "components/navigation";
 
 // Layout
-@import "layout/footer";
-@import "layout/grid";
-@import "layout/header";
-@import "layout/sidebar";
+@import "layouts/footer";
+@import "layouts/grid";
+@import "layouts/header";
+@import "layouts/sidebar";
 
 // Page
-@import "page/home";
-@import "page/profile";
-@import "page/notfound";
+@import "modules/home";
+@import "modules/profile";
+@import "modules/notfound";

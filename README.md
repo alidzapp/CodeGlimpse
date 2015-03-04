@@ -9,6 +9,9 @@ A Meteor application/ experiment. Follow and communicate with other developers. 
 If you want to run Code Glimpse, you'll have to install Meteor. Installation instructions can be found [here](https://www.meteor.com/install).
 
 - Clone this repository
+- Rename `lib/api_keys.coffee.example` to `lib/api_keys.coffee`
+- Register a new application. You can do that [here](https://github.com/settings/applications)
+- Fill in your (personal) client and key
 - Run `meteor` in the terminal
 
 
