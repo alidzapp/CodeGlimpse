@@ -8,6 +8,5 @@ if Meteor.isClient
 		@render 'home'
 
 	Router.route '/@:username', ->
-		@render 'profile',
-			data: ->
-				Meteor.users.find('services.github.username': @params.username).fetch()[0]
+		Session.set 'username', @params.username
+		@render 'profile'

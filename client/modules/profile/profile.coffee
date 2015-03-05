@@ -1,6 +1,8 @@
 Template.profile.helpers
 	active: ->
 		'active' if Session.get('active') is true
+	user: ->
+		Meteor.users.find('services.github.username': Session.get('username')).fetch()[0]
 
 Template.profile.events
 	'click .hero a': (event, template) ->
