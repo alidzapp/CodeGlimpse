@@ -2,7 +2,11 @@ Template.profile.helpers
 	active: ->
 		'active' if Session.get('active') is true
 	user: ->
-		Meteor.users.find('services.github.username': Session.get('username')).fetch()[0]
+		user = Meteor.users.find({ 'services.github.username': Session.get('username') },
+		    { fields: { 'image': 1 } }
+		)
+
+		console.log user
 
 Template.profile.events
 	'click .hero a': (event, template) ->
