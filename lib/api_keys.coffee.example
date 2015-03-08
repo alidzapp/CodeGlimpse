@@ -1,4 +1,4 @@
-ApiKeys = {
+@ApiKeys = {
 	github: {
 		clientId: '',
 		secret: ''
