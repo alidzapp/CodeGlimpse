@@ -14,6 +14,8 @@ If you want to run Code Glimpse, you'll have to install Meteor. Installation ins
 - Fill in your (personal) clientId and secret
 - Run `meteor` in the terminal
 
+**Note:** When you get SCSS errors about bourbon or neat, try `touch client/stylesheets/main.scss`
+
 
 ## Contributing
 If you'd like to contribute to Code Glimpse, you need to
