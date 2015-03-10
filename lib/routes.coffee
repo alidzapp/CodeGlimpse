@@ -8,5 +8,5 @@ if Meteor.isClient
 		@render 'home'
 
 	Router.route '/@:username', ->
-		Session.set 'username', @params.username
-		@render 'profile'
+		@render 'profile', data: ->
+			Meteor.users.findOne({username: @params.username})
