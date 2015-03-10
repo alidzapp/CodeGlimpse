@@ -1,3 +1,3 @@
 Template.profile.helpers
 	user: ->
-		user = Meteor.users.find({}).fetch()[0]
+		Meteor.users.findOne({username: Session.get('username')})
