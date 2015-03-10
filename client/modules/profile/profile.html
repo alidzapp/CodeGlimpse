@@ -2,18 +2,18 @@
 	<section id="profile">
 		<div class="hero">
 			<aside>
-				<img src="/images/avatar.jpg" alt="">
+				<img src="{{ avatar }}" alt="">
 			</aside>
 			<article>
-				<h3>{{ profile.name }}</h3>
-				<h4>{{ services.github.username }}</h4>
-				<a class="{{ active }}">Follow</a>
+				<h3>{{ name }}</h3>
+				<h4>{{ username }}</h4>
+				<a>Follow</a>
 			</article>
 		</div>
 		<div class="latest posts"><!-- Max 6 results -->
 			<header>
 				<span>Latest posts</span>
-				<a href="/@{{ services.github.username }}/posts">All posts &nbsp;&nbsp;&gt;</a>
+				<a href="/@{{ username }}/posts">All posts &nbsp;&nbsp;&gt;</a>
 			</header>
 			<article>
 				<a href="">

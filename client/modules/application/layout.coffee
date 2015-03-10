@@ -1,7 +1,3 @@
-Template.layout.helpers
-	currentUser: () ->
-		Meteor.user()
-
 Template.layout.events
 	'click .login': (event, template) ->
 		Meteor.loginWithGithub()
@@ -9,7 +5,7 @@ Template.layout.events
 	'click .logout': (event, template) ->
 		Meteor.logout()
 
-Template.layout.rendered = () ->
+Template.layout.rendered = ->
 	$(window).scroll (event) ->
 		header = $('header')
 
