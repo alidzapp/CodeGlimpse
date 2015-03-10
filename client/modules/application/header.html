@@ -4,7 +4,7 @@
 
 		{{ #if currentUser }}
 			<a class="logout" href="/">Logout</a>
-			<a href="/@{{ currentUser.username }}">{{ currentUser.username }}</a>
+			<a href="/@{{ currentUser.username }}">{{ currentUser.name }}</a>
 		{{ else }}
 			<a class="login" href="/">Login</a>
 		{{ /if}}
