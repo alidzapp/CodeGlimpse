@@ -7,13 +7,11 @@ if Meteor.isClient
 	Router.route '/', ->
 		@render 'home'
 
-	Router.route '/@:username', ->
-		@wait Meteor.subscribe('allUsers')
-
-		if @ready()
+	Router.route '/@:username',
+		waitOn: ->
+			Meteor.subscribe 'allUsers'
+		action: ->
 			@render 'profile', data: ->
 				Meteor.users.findOne({
 					username: @params.username
 				})
-		else
-			@render 'loading'
