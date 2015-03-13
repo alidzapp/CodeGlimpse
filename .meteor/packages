@@ -13,5 +13,4 @@ accounts-github
 accounts-ui-unstyled
 fourseven:scss@1.0.0
 momentjs:moment
-sanjo:jasmine
-fastclick
+mike:mocha
