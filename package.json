@@ -1,4 +1,7 @@
 {
+  "name": "CodeGlimpse",
+  "version": "0.0.1",
+  "description": "A social network created by developers for developers",
   "devDependencies": {
     "coffee-script": "latest"
   }
