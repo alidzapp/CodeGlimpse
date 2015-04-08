@@ -9,9 +9,9 @@ if Meteor.isClient
 			@render 'home'
 		name: 'home'
 
-	Router.route '/:username',
+	Router.route '/@:username',
 		waitOn: ->
-			Meteor.subscribe 'userByUsername', @username
+			Meteor.subscribe 'allUsers'
 		action: ->
 			@render 'profile'
 		name: 'profile'
