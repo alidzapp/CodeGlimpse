@@ -1,0 +1,19 @@
+<template name="profile">
+	<header>
+		<aside>
+			<img src="{{ user.avatar }}" alt="">
+		</aside>
+		<article>
+			<h3>{{ user.name }}</h3>
+			<h4>{{ user.username }}</h4>
+			<button>Follow</button>
+		</article>
+	</header>
+	<section>
+		{{ #each posts }}
+			<!-- posts coming soon -->
+		{{ else }}
+			<p>This user does not have any public posts</p>
+		{{ /each }}
+	</section>
+</template>

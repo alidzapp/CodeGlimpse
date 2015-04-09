@@ -1,0 +1,15 @@
+#home {
+	header {
+		min-height: 80vh;
+		text-align: center;
+		@include flex-direction(column);
+
+		h1, h4 {
+			margin: 0;
+		}
+
+		button {
+			margin: 10vh auto 0;
+		}
+	}
+}

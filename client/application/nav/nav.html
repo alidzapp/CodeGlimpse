@@ -1,0 +1,12 @@
+<template name="nav">
+	<nav class="transparent">
+		<a href="/">Code Glimpse</a>
+
+		{{ #if currentUser }}
+			<a class="logout">Logout</a>
+			<a href="/{{ currentUser.username }}">{{ currentUser.name }}</a>
+		{{ else }}
+			<a class="login">Login</a>
+		{{ /if}}
+	</nav>
+</template>
