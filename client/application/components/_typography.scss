@@ -1,0 +1,26 @@
+h1, h2, h3, h4, h5, h6 {
+	width: 100%;
+	display: inline-block;
+}
+
+h1, h2, h3, h4, h5, h6, a, span, p {
+	margin: 0;
+	font-family: sans-serif;
+	font-weight: 100;
+	@include font-smoothing;
+
+	&:not(:last-child) {
+		margin-bottom: 1rem;
+	}
+}
+
+p {
+	color: #555;
+}
+
+h1 {@include font-size(  5rem); color: #333;}
+h2 {@include font-size(  4rem); color: #333;}
+h3 {@include font-size(  3rem); color: #333;}
+h4 {@include font-size(  2rem); color: #aaa;}
+h5 {@include font-size(  1rem); color: #333;}
+h6 {@include font-size(0.5rem); color: #333;}
