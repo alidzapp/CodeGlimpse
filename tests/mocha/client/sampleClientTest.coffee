@@ -1,4 +1,5 @@
 MochaWeb?.testOnly ->
-	describe 'a group of tests', ->
-		it 'should respect equality', ->
-			chai.assert.equal 5,5
+	describe 'logging in with Github', ->
+		it 'should return a Meteor user object', ->
+			$('.login').click()
+			chai.assert.isNotNull(Meteor.currentUser)
