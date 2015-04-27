@@ -1,1 +1,2 @@
-@Posts = new Mongo.Collection 'posts'
+@Posts     = new Mongo.Collection 'posts'
+@Followers = new Mongo.Collection 'followers'

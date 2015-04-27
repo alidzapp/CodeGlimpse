@@ -1,10 +1,37 @@
 Template.profile.helpers
 	user: ->
-		Meteor.users.findOne({
-			username: Router.current().params.username
-		})
+		currentUser()
+	isCurrentUser: ->
+		isCurrentUser()
+	isFollowing: ->
+		getFollower()
 
 Template.profile.events
 	'click .follow': (event, template) ->
-		if Session.get('user') isnt Meteor.user
-			console.log 'trying to follow'
+		if not isCurrentUser()
+			follower = getFollower()
+
+			if follower
+				Followers.remove({
+					_id: follower._id
+				})
+			else
+				Followers.insert({
+					userId: Meteor.user()._id,
+					follower: currentUser()._id
+				})
+
+# Private functions --------------------------------
+currentUser = ->
+	Meteor.users.findOne({
+		username: Router.current().params.username
+	})
+
+isCurrentUser = ->
+	currentUser()._id is Meteor.user()._id
+
+getFollower = ->
+	Followers.findOne({
+		userId: Meteor.user()._id,
+		follower: currentUser()._id
+	})

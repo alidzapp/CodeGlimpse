@@ -1,5 +1,6 @@
 button {
 	padding: 0.8rem 2rem;
+	margin: 0;
 	margin-right: 1rem;
 	font-size: 1.2rem;
 	line-height: 1;
@@ -16,7 +17,12 @@ button {
 	@include user-select(none);
 
 	&:hover, &:focus {
-		border: 1px solid rgba($color-primary, 1);
+		border: 1px solid $color-primary;
+	}
+
+	&.active {
+		background-color: $color-primary;
+		color: #fff;
 	}
 
 	@media #{$phone-width} {
