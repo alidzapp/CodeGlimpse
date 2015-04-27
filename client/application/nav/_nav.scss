@@ -1,6 +1,6 @@
 nav {
-	position: fixed;
-	top: 0;
+	position: absolute;
+	top: 15px;
 	width: 100vw;
 	padding: 1.4rem 5%;
 	background-color: rgba(255, 255, 255, 0.98);
@@ -10,20 +10,19 @@ nav {
 	@include user-select(none);
 
 	&.transparent {
-		position: absolute;
-		top: 15px;
 		background-color: transparent;
 	}
 
 	a {
 		float: right;
-		color: #888;
+		color: #000;
 		font-family: "Source Sans Pro" ,"Helvetica Neue", Helvetica, Arial, sans-serif;;
 		font-weight: 300;
 		font-size: 1.4rem;
 		text-decoration: none;
 		text-transform: uppercase;
 		cursor: pointer;
+		margin-bottom: 0 !important;
 
 		&:first-child {
 			float: left;
@@ -34,7 +33,7 @@ nav {
 		}
 
 		&:hover {
-			color: #333;
+			border-bottom: 2px solid $color-primary;
 		}
 	}
 }

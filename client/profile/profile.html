@@ -1,12 +1,13 @@
 <template name="profile">
 	<header>
 		<aside>
-			<img src="{{ user.avatar }}" alt="">
+			<img src="/images/avatar.jpg" alt="">
+			<!-- <img src="{{ user.avatar }}" alt=""> -->
 		</aside>
 		<article>
 			<h3>{{ user.name }}</h3>
 			<h4>{{ user.username }}</h4>
-			<button>Follow</button>
+			<button class="follow">Follow</button>
 		</article>
 	</header>
 	<section>
