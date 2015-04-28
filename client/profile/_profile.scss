@@ -1,3 +1,24 @@
+.avatar {
+	width: 12.5rem;
+	height: 12.5rem;
+	background-color: $color-primary;
+	border-radius: 50%;
+	@include user-select(none);
+	overflow: hidden;
+	backface-visibility: hidden;
+	@include perspective(1px);
+
+	img {
+		border-radius: 50%;
+		@include backface-visibility(hidden);
+		@include transition(.2s);
+	}
+
+	&:hover img {
+		@include transform(scale(1.2));
+	}
+}
+
 #profile {
 	header {
 		aside, article {

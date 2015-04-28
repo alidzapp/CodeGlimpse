@@ -5,12 +5,16 @@
 		background: #fff;
 		@include flex-direction(column);
 
-		h1, h4 {
-			margin: 0;
-		}
-
 		button {
 			margin: 10vh auto 0;
+		}
+	}
+
+	section {
+		@include flex-direction(row);
+
+		.avatar {
+			margin: 0 1rem;
 		}
 	}
 }

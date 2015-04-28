@@ -18,9 +18,19 @@
 
 <template name="dashboard">
 	<header>
-		<h1>Dashboard</h1>
+		<h4>Users you are following</h4>
+		{{> avatars avatars=followers}}
 	</header>
 	<section>
-		<p>Not content yet..</p>
+		<h4>All users</h4>
+		{{> avatars avatars=users}}
 	</section>
+</template>
+
+<template name="avatars">
+	{{#each avatars}}
+		<a class="avatar" href="/{{ username }}"><img src="{{ avatar }}" alt=""></a>
+	{{else}}
+		<p>There are no users</p>
+	{{/each}}
 </template>
