@@ -1,9 +1,13 @@
 #home {
 	header {
-		min-height: 80vh;
 		text-align: center;
 		background: #fff;
+		@include flex(1);
 		@include flex-direction(column);
+
+		&:not(.dashboard) {
+			min-height: 80vh;
+		}
 
 		button {
 			margin: 10vh auto 0;
@@ -11,6 +15,7 @@
 	}
 
 	section {
+		@include flex(1);
 		@include flex-direction(row);
 
 		.avatar {

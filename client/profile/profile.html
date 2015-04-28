@@ -1,14 +1,18 @@
 <template name="profile">
 	<header>
 		<aside>
-			<img src="{{ user.avatar }}" alt="">
+			{{> avatar user=user link=false}}
 		</aside>
 		<article>
 			<h3>{{ user.name }}</h3>
 			<h4>{{ user.username }}</h4>
 			{{ #unless isCurrentUser }}
 				<button class="follow {{#if isFollowing}}active{{/if}}">
-					follow{{#if isFollowing}}ing{{/if}}
+					{{#if isFollowing}}
+						following
+					{{else}}
+						follow
+					{{/if}}
 				</button>
 			{{ else }}
 				<button>edit profile</button>

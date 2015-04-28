@@ -17,20 +17,32 @@
 </template>
 
 <template name="dashboard">
-	<header>
+	<header class="dashboard">
 		<h4>Users you are following</h4>
-		{{> avatars avatars=followers}}
+		{{#each followers}}
+			{{> avatar size="small" user=this link=true}}
+		{{else}}
+			<p>You aren't following anybody</p>
+		{{/each}}
 	</header>
 	<section>
 		<h4>All users</h4>
-		{{> avatars avatars=users}}
+		{{#each users}}
+			{{> avatar size="small" user=this link=true}}
+		{{else}}
+			<p>There are no users</p>
+		{{/each}}
 	</section>
 </template>
 
-<template name="avatars">
-	{{#each avatars}}
-		<a class="avatar" href="/{{ username }}"><img src="{{ avatar }}" alt=""></a>
+<template name="avatar">
+	{{#if link}}
+		<a class="avatar {{ size }}" href="/{{ user.username }}" title="{{ name }}">
+			<img src="{{ user.avatar }}" alt="{{ user.name }}">
+		</a>
 	{{else}}
-		<p>There are no users</p>
-	{{/each}}
+		<div class="avatar {{ size }}">
+			<img src="{{ user.avatar }}" alt="{{ user.name }}">
+		</div>
+	{{/if}}
 </template>
