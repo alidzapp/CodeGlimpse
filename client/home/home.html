@@ -5,15 +5,18 @@
 			<h4>A social network for developers, by developers.</h4>
 			<button class="login">Login or register</button>
 		</header>
-		<section>
-			<h4>Login or register</h4>
-			<p>
-				We are happy to anounce that users can now register and login using Github!
-			</p>
-		</section>
 	{{ else }}
 		{{ >dashboard }}
 	{{ /unless }}
+
+	<section>
+		<h4>Our users</h4>
+		{{#each users}}
+			{{> avatar size="small" user=this link=true}}
+		{{else}}
+			<p>There are no users</p>
+		{{/each}}
+	</section>
 </template>
 
 <template name="dashboard">
@@ -25,19 +28,11 @@
 			<p>You aren't following anybody</p>
 		{{/each}}
 	</header>
-	<section>
-		<h4>All users</h4>
-		{{#each users}}
-			{{> avatar size="small" user=this link=true}}
-		{{else}}
-			<p>There are no users</p>
-		{{/each}}
-	</section>
 </template>
 
 <template name="avatar">
 	{{#if link}}
-		<a class="avatar {{ size }}" href="/{{ user.username }}" title="{{ name }}">
+		<a class="avatar {{ size }}" href="/{{ user.username }}" title="{{ user.name }}">
 			<img src="{{ user.avatar }}" alt="{{ user.name }}">
 		</a>
 	{{else}}

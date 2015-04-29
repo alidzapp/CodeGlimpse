@@ -8,5 +8,7 @@ Template.dashboard.helpers
 		Meteor.users.find({
 			_id: {$in: followers}
 		}).fetch()
+
+Template.home.helpers
 	users: ->
 		Meteor.users.find({})

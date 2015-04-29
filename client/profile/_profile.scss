@@ -4,6 +4,9 @@
 	border-radius: 50%;
 	overflow: hidden;
 	@include user-select(none);
+	@include transition(.2s);
+	@include backface-visibility(hidden);
+	@include transform-style(preserve-3d);
 
 	img {
 		width: 100%;
@@ -15,6 +18,10 @@
 		width: 6rem;
 		height: 6rem;
 	}
+}
+
+a.avatar:hover {
+	@include transform(translateZ(0) scale(1.1));
 }
 
 #profile {
