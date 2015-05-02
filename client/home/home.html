@@ -22,11 +22,13 @@
 <template name="dashboard">
 	<header class="dashboard">
 		<h4>Users you are following</h4>
-		{{#each followers}}
-			{{> avatar size="small" user=this link=true}}
-		{{else}}
-			<p>You aren't following anybody</p>
-		{{/each}}
+		<div class="users">
+			{{#each followers}}
+				{{> avatar size="small" user=this link=true}}
+			{{else}}
+				<p>You aren't following anybody</p>
+			{{/each}}
+		</div>
 	</header>
 </template>
 

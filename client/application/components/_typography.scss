@@ -8,7 +8,9 @@ h1, h2, h3, h4, h5, h6, a, span, p {
 	margin: 0;
 	font-family: $font-default;
 	@include font-smoothing;
+}
 
+h1, h2, h3, h4, h5, h6, span, p {
 	&:not(:last-child) {
 		margin-bottom: 1rem;
 	}

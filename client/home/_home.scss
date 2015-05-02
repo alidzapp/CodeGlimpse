@@ -16,12 +16,15 @@
 
 	section {
 		@include flex(1);
+	}
+
+	section, .users {
 		@include flex-direction(row);
 		@include flex-wrap(wrap);
 		@include align-items(center);
+	}
 
-		.avatar {
-			margin: 0 1rem;
-		}
+	.avatar {
+		margin: 0 1rem;
 	}
 }

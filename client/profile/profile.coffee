@@ -21,6 +21,9 @@ Template.profile.events
 					follower: currentUser()._id
 				})
 
+Template.profile.rendered = ->
+	Zoomerang.listen('#profile header .avatar img')
+
 # Private functions --------------------------------
 currentUser = ->
 	Meteor.users.findOne({

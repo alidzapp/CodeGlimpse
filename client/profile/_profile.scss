@@ -8,6 +8,7 @@
 	height: 12.5rem;
 	display: block;
 	border-radius: 50%;
+	cursor: pointer;
 	@include transition(.1s);
 	@include backface-visibility(hidden);
 
@@ -25,7 +26,6 @@
     padding: 0.3rem;
     font-weight: 400;
     color: $color-primary;
-    border-radius: 5px;
     z-index: 2;
     opacity: 0;
     white-space: nowrap;
