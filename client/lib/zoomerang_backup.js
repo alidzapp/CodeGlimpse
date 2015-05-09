@@ -9,6 +9,7 @@
 
     // elements
     var overlay = document.createElement('div'),
+        wrapper = document.createElement('div'),
         target,
         parent,
         placeholder
@@ -23,7 +24,7 @@
         transitionDuration: '.4s',
         transitionTimingFunction: 'cubic-bezier(.4,0,0,1)',
         bgColor: '#fff',
-        bgOpacity: 1,
+        bgOpacity: 0.98,
         maxWidth: 300,
         maxHeight: 300,
         onOpen: null,
@@ -50,6 +51,15 @@
         transition: 'opacity ' +
             options.transitionDuration + ' ' +
             options.transitionTimingFunction
+    })
+
+    setStyle(wrapper, {
+        position: 'fixed',
+        zIndex: 99999,
+        top: '50%',
+        left: '50%',
+        width: 0,
+        height: 0
     })
 
     // helpers ----------------------------------------------------------------
@@ -169,6 +179,14 @@
             placeholder = copy(target, p)
 
             originalStyles = setStyle(target, {
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: '',
+                bottom: '',
+                whiteSpace: 'nowrap',
+                marginTop: -p.height / 2 + 'px',
+                marginLeft: -p.width / 2 + 'px',
                 transform: 'translate(' + dx + 'px, ' + dy + 'px)',
                 transition: ''
             }, true)
@@ -179,12 +197,17 @@
             if (wPctMatch || hPctMatch) {
                 var wPct = wPctMatch ? +wPctMatch[1] / 100 : 1,
                     hPct = hPctMatch ? +hPctMatch[1] / 100 : 1
+                setStyle(wrapper, {
+                    width: ~~(p.width / wPct) + 'px',
+                    height: ~~(p.height / hPct) + 'px'
+                })
             }
 
             // insert overlay & placeholder
             parent.appendChild(overlay)
+            parent.appendChild(wrapper)
             parent.insertBefore(placeholder, target)
-            overlay.appendChild(target)
+            wrapper.appendChild(target)
             overlay.style.display = 'block'
 
             // force layout
@@ -232,6 +255,7 @@
                 parent.insertBefore(target, placeholder)
                 parent.removeChild(placeholder)
                 parent.removeChild(overlay)
+                parent.removeChild(wrapper)
                 overlay.style.display = 'none'
                 placeholder = null
                 shown = false
@@ -270,6 +294,7 @@
     }
 
     overlay.addEventListener('click', api.close)
+    wrapper.addEventListener('click', api.close)
     window.addEventListener('scroll', api.close)
 
     // umd expose
@@ -278,6 +303,6 @@
     } else if (typeof define == "function" && define.amd) {
         define(function(){ return api })
     } else {
-        this.Zoomerang2 = api
+        this.ZoomerangBackup = api
     }
 })();

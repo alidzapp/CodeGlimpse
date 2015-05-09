@@ -8,8 +8,9 @@
 	height: 12.5rem;
 	display: block;
 	border-radius: 50%;
-	cursor: pointer;
-	@include transition(.1s);
+	background: url('/images/avatar.jpg') center center;
+	background-size: cover;
+	@include transition(.4s);
 	@include backface-visibility(hidden);
 
 	&.small {
@@ -23,7 +24,7 @@
     content: attr(data-tooltip);
     left: 50%;
     top: 100%;
-    padding: 0.3rem;
+    padding: 0 0.3rem;
     font-weight: 400;
     color: $color-primary;
     z-index: 2;
@@ -44,7 +45,7 @@
 @include keyframes(tooltipUp) {
 	from {
 		opacity: 0;
-		@include transform(translate(-50%, 1rem));
+		@include transform(translate(-50%, 1.5rem));
 	}
 	to {
 		opacity: 1;
@@ -59,12 +60,12 @@
 	}
 	to {
 		opacity: 0;
-		@include transform(translate(-50%, 1rem));
+		@include transform(translate(-50%, 1.5rem));
 	}
 }
 
 a.avatar img:hover {
-	@include transform(scale(1.1));
+	@include transform(translateY(-0.5rem));
 }
 
 #profile {
