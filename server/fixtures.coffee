@@ -13,7 +13,4 @@ Meteor.startup ->
 		}]
 
 		_.each users, (user) ->
-			# Accounts.createUser doesn't seem to work
 			Meteor.users.insert user
-
-

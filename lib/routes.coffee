@@ -7,11 +7,9 @@ if Meteor.isClient
 	Router.route '/',
 		action: ->
 			@render 'home'
-		name: 'home'
 
 	Router.route '/:username',
 		waitOn: ->
 			Meteor.subscribe 'allUsers'
 		action: ->
 			@render 'profile'
-		name: 'profile'

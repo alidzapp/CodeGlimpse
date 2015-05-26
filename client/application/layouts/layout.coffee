@@ -1,7 +1,3 @@
-Template.layout.helpers
-	template: ->
-		Router.current().route.getName()
-
 Template.layout.events
 	'click .login': (event, template) ->
 		Meteor.loginWithGithub()
