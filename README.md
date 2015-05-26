@@ -11,7 +11,7 @@ If you want to run Code Glimpse, you'll have to install Meteor. Installation ins
 
 - Clone this repository
 - Rename `lib/api_keys.coffee.example` to `lib/api_keys.coffee`
-- Register a new application. You can do that [here](https://github.com/settings/applications)
+- Register a new application. You can do that [here](https://github.com/settings/applications/new)
 - Fill in your (personal) clientId and secret
 - Run `meteor` in the terminal
 
