@@ -7,9 +7,16 @@ if Meteor.isClient
 	Router.route '/',
 		action: ->
 			@render 'home'
+		name: 'home'
+
+	Router.route '/logout',
+		action: ->
+			Meteor.logout()
+			@redirect('/')
 
 	Router.route '/:username',
 		waitOn: ->
 			Meteor.subscribe 'allUsers'
 		action: ->
 			@render 'profile'
+		name: 'profile'

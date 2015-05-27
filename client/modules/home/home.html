@@ -3,30 +3,29 @@
 		<header>
 			<h1>Code Glimpse</h1>
 			<h4>A social network for developers, by developers.</h4>
-			<button class="login">Login or register</button>
+			<button class="btn login">Login or register</button>
 		</header>
+		<section>
+			<h4>Our users</h4>
+			{{#each users}}
+				{{> avatar size="small" user=this link=true}}
+			{{else}}
+				<p>There are no users</p>
+			{{/each}}
+		</section>
 	{{ else }}
 		{{ >dashboard }}
 	{{ /unless }}
-
-	<section>
-		<h4>Our users</h4>
-		{{#each users}}
-			{{> avatar size="small" user=this link=true}}
-		{{else}}
-			<p>There are no users</p>
-		{{/each}}
-	</section>
 </template>
 
 <template name="dashboard">
 	<header class="dashboard">
-		<h4>Users you are following</h4>
+		<h4>People you follow</h4>
 		<div class="users">
-			{{#each followers}}
+			{{#each boards}}
 				{{> avatar size="small" user=this link=true}}
 			{{else}}
-				<p>You aren't following anybody</p>
+				<p>You aren't following anybody yet.</p>
 			{{/each}}
 		</div>
 	</header>

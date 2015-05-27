@@ -3,23 +3,6 @@ Template.profile.helpers
 		currentUser()
 	isCurrentUser: ->
 		isCurrentUser()
-	isFollowing: ->
-		getFollower()
-
-Template.profile.events
-	'click .follow': (event, template) ->
-		if not isCurrentUser()
-			follower = getFollower()
-
-			if follower
-				Followers.remove({
-					_id: follower._id
-				})
-			else
-				Followers.insert({
-					userId: Meteor.user()._id,
-					follower: currentUser()._id
-				})
 
 Template.profile.rendered = ->
 	Zoomerang.listen('#profile header .avatar img')
@@ -32,9 +15,3 @@ currentUser = ->
 
 isCurrentUser = ->
 	currentUser()._id is Meteor.user()._id
-
-getFollower = ->
-	Followers.findOne({
-		userId: Meteor.user()._id,
-		follower: currentUser()._id
-	})
