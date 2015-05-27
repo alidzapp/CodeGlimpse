@@ -1,5 +1,4 @@
 nav {
-	position: fixed;
 	width: 100%;
 	height: $nav-height;
 	background-color: $color-white;
@@ -8,6 +7,14 @@ nav {
 	padding: 0 1rem;
 	z-index: 10;
 	@include user-select(none);
+
+	&.fixed {
+		position: fixed;
+	}
+
+	&:not(.fixed) {
+		position: absolute;
+	}
 
 	.logo {
 		position: absolute;

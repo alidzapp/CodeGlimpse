@@ -8,7 +8,6 @@
 	height: 12.5rem;
 	display: block;
 	border-radius: 50%;
-	background: $color-primary;
 	@include transition(.1s);
 	@include backface-visibility(hidden);
 

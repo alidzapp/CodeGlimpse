@@ -20,3 +20,8 @@
 // Modules
 @import "modules/home/home";
 @import "modules/profile/profile";
+
+// Disable text selection of velocity status
+#velocity-status-widget {
+	@include user-select(none);
+}
