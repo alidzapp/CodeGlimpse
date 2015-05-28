@@ -3,7 +3,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 </head>
 <template name="layout">
-	<nav>
+	<!-- <nav>
 		<a href="/" class="logo">Code Glimpse</a>
 		<button href="/" class="menu-toggler">
 			<span>Menu</span>
@@ -14,7 +14,8 @@
 		{{ else }}
 			<a class="login">Login</a>
 		{{ /if}}
-	</nav>
+	</nav> -->
+	{{>nav logo="Code Glimpse" items=menuItems}}
 	<main id="{{ template }}">
 		{{ >yield }}
 	</main>

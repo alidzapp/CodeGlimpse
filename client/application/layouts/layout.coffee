@@ -1,6 +1,12 @@
 Template.layout.helpers
 	template: ->
 		Router.current().route.getName()
+	menuItems: ->
+		[
+			'home': '/'
+			'profile': '/profile'
+			'logout': '/logout'
+		]
 
 Template.layout.events
 	'click .login': (event, template) ->
