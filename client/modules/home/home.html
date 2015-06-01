@@ -33,7 +33,7 @@
 
 <template name="avatar">
 	{{#if link}}
-		<a class="avatar" href="/{{ user.username}}" data-tooltip="{{ user.name }}">
+		<a class="avatar" href="/{{ user.username}}" data-name="{{ user.name }}">
 			<img
 				class="{{ size }}"
 				src="{{ user.avatar }}"

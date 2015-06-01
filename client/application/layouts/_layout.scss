@@ -74,10 +74,10 @@ header, section {
 	z-index: 1;
 	background-color: $color-background;
 	@include transition(.4s);
-	box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
 }
 
 .applicationContent.menu-open {
+	opacity: 0.6;
 	@include transform(translate3d(40%, 0, 0) scale3d(0.85, 0.85, 1));
 }
 

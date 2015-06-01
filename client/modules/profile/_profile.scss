@@ -17,9 +17,9 @@
 	}
 }
 
-[data-tooltip]:after {
+[data-name]:after {
     position: absolute;
-    content: attr(data-tooltip);
+    content: attr(data-name);
     left: 50%;
     top: 100%;
     padding: 0 0.3rem;
@@ -36,7 +36,7 @@
     @include animation-name(tooltipUpOut);
 }
 
-[data-tooltip]:hover:after {
+[data-name]:hover:after {
 	@include animation-name(tooltipUp);
 }
 
