@@ -49,6 +49,8 @@ main {
 
 header {
 	background-color: #fff;
+	padding-left: 15%;
+	padding-right: 15%;
 	min-height: 50vh;
 	width: 100%;
 	@include flex-direction(row);
@@ -64,8 +66,8 @@ section {
 }
 
 header, section {
-	padding: 4.5rem 20%;
-	overflow: hidden;
+	padding-top: 4.5rem;
+	padding-bottom: 4.5rem;
 	@include flexbox;
 }
 
@@ -105,7 +107,7 @@ header, section {
 
 @media #{$tablet-width} {
 	header, section {
-		padding: 4.5rem 10%;
+		padding: 4.5rem 5%;
 	}
 }
 

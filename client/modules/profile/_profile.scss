@@ -68,8 +68,11 @@ a.avatar img:hover {
 
 #profile {
 	header {
+		@include flex-direction(row);
+
 		article {
 			margin-left: 4.5rem;
+			@include flex(1);
 			@include flex-direction(row);
 
 			h3 {
@@ -80,6 +83,8 @@ a.avatar img:hover {
 
 	@media #{$phone-width} {
 		header {
+			@include flex-direction(column);
+
 			&, aside, article {
 				margin: auto;
 				text-align: center;
