@@ -4,6 +4,12 @@
 </head>
 <template name="layout">
 	<div class="notifications"></div>
+	<div class="applicationContent">
+		{{>nav logo="Code Glimpse" items=menuItems}}
+		<main id="{{ template }}">
+			{{ >yield }}
+		</main>
+	</div>
 	<div class="applicationMenu">
 		<ul>
 			<li><a href="/">Home</a></li>
@@ -14,11 +20,5 @@
 				<li><a class="login">Login</a></li>
 			{{ /if}}
 		</ul>
-	</div>
-	<div class="applicationContent">
-		{{>nav logo="Code Glimpse" items=menuItems}}
-		<main id="{{ template }}">
-			{{ >yield }}
-		</main>
 	</div>
 </template>

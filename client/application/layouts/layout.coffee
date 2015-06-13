@@ -18,11 +18,17 @@ Template.layout.events
 	'click .applicationContent.menu-open': (event, template) ->
 		if not $(event.target).hasClass 'menu-toggler'
 			event.preventDefault()
-			$('.applicationContent').removeClass('menu-open')
+			menu = new Menu()
+			menu.close()
+
+	'click .applicationMenu a': (event, template) ->
+		menu = new Menu()
+		menu.close()
 
 Template.nav.events
 	'click .menu-toggler': (event, template) ->
-		$('.applicationContent').toggleClass('menu-open')
+		menu = new Menu()
+		menu.toggle()
 
 Template.layout.rendered = ->
 	$window = $(window)
@@ -33,3 +39,16 @@ Template.layout.rendered = ->
 			$nav.addClass('fixed')
 		else
 			$nav.removeClass('fixed')
+
+class Menu
+	$applicationContent = $('.applicationContent')
+	className           = 'menu-open'
+
+	close: ->
+		$applicationContent.removeClass(className)
+
+	open: ->
+		$applicationContent.addClass(className)
+
+	toggle: ->
+		$applicationContent.toggleClass(className)

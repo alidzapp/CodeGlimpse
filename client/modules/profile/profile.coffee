@@ -4,9 +4,6 @@ Template.profile.helpers
 	isCurrentUser: ->
 		isCurrentUser()
 
-Template.profile.rendered = ->
-	Zoomerang.listen('#profile header .avatar img')
-
 # Private functions --------------------------------
 currentUser = ->
 	Meteor.users.findOne({
