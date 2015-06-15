@@ -7,10 +7,10 @@
 meteor-platform
 coffeescript
 iron:router
-wolves:bourbon
+wolves:bourbon@2.0.0
 accounts-github
 accounts-ui-unstyled
-fourseven:scss@2.1.1
+fourseven:scss@3.1.1
 mike:mocha
 xolvio:github-fake
 autopublish
