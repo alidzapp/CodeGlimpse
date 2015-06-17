@@ -40,7 +40,7 @@ Template.layout.rendered = ->
 		else
 			$nav.removeClass('fixed')
 
-class Menu
+Menu = () ->
 	$applicationContent = $('.applicationContent')
 	className           = 'menu-open'
 
