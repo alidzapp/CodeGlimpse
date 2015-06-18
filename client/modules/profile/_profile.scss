@@ -1,5 +1,6 @@
 .avatar {
 	position: relative;
+	z-index: 1;
 }
 
 .avatar img {
@@ -8,6 +9,7 @@
 	height: 12.5rem;
 	display: block;
 	border-radius: 50%;
+	background-color: #00cdaa;
 	@include transition(.1s);
 	@include backface-visibility(hidden);
 
