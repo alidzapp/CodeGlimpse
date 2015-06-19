@@ -4,6 +4,8 @@
 
 (function () {
 
+    var prefix = 'WebkitAppearance' in document.documentElement.style ? '-webkit-' : ''
+
     // regex
     var percentageRE = /^([\d\.]+)%$/
 
@@ -48,6 +50,7 @@
         bottom: 0,
         opacity: 0,
         backgroundColor: options.bgColor,
+        cursor: prefix + 'zoom-out',
         transition: 'opacity ' +
             options.transitionDuration + ' ' +
             options.transitionTimingFunction
@@ -63,22 +66,6 @@
     })
 
     // helpers ----------------------------------------------------------------
-    var prefix = (function () {
-        var styles = window.getComputedStyle(document.documentElement, ''),
-            pre = (Array.prototype.slice
-                .call(styles)
-                .join('')
-                .match(/-(moz|webkit|ms)-/) || (styles.OLink === '' && ['', 'o'])
-            )[1],
-            dom = ('WebKit|Moz|MS|O').match(new RegExp('(' + pre + ')', 'i'))[1];
-
-        return {
-            dom: dom,
-            lowercase: pre,
-            css: '-' + pre + '-',
-            js: pre[0].toUpperCase() + pre.substr(1)
-        };
-    })();
 
     function setStyle (el, styles, remember) {
         checkTrans(styles)
@@ -204,7 +191,8 @@
                 marginTop: -p.height / 2 + 'px',
                 marginLeft: -p.width / 2 + 'px',
                 transform: 'translate(' + dx + 'px, ' + dy + 'px)',
-                transition: ''
+                transition: '',
+                cursor: prefix + 'zoom-out'
             }, true)
 
             // deal with % width and height
@@ -295,6 +283,10 @@
                 }
                 return
             }
+
+            setStyle(el, {
+                cursor: prefix + 'zoom-in'
+            })
 
             el.addEventListener('click', function (e) {
                 e.stopPropagation()
