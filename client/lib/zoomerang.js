@@ -4,6 +4,7 @@
 
 (function () {
 
+    // webkit prefix helper
     var prefix = 'WebkitAppearance' in document.documentElement.style ? '-webkit-' : ''
 
     // regex
@@ -190,9 +191,9 @@
                 whiteSpace: 'nowrap',
                 marginTop: -p.height / 2 + 'px',
                 marginLeft: -p.width / 2 + 'px',
+                cursor: prefix + 'zoom-out',
                 transform: 'translate(' + dx + 'px, ' + dy + 'px)',
-                transition: '',
-                cursor: prefix + 'zoom-out'
+                transition: ''
             }, true)
 
             // deal with % width and height
@@ -233,8 +234,6 @@
                 cb = cb || options.onOpen
                 if (cb) cb(target)
             })
-
-
 
             return this
         },
