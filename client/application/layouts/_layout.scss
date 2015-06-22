@@ -47,7 +47,7 @@ main {
     @include flex-direction(column);
 }
 
-header {
+main > header {
     background-color: #fff;
     width: 100vw;
     @include flex-direction(row);
@@ -55,7 +55,7 @@ header {
     @include align-items(center);
 }
 
-section {
+main > section {
     text-align: center;
     @include flex(1);
     @include flex-direction(column);
@@ -63,7 +63,7 @@ section {
     background-color: $color-background;
 }
 
-header, section {
+main > header, main > section {
     padding: 4.5rem 20%;
     @include flexbox;
 }
