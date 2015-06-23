@@ -10,7 +10,9 @@ Template.layout.helpers
 
 Template.layout.events
 	'click .login': (event, template) ->
-		Meteor.loginWithGithub()
+		Meteor.loginWithGithub (error) ->
+			if error
+				console.warn('Could not login: ' + error)
 
 	'click .logout': (event, template) ->
 		Meteor.logout()
