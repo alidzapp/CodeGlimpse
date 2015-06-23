@@ -1,68 +1,29 @@
 <template name="profile">
-	<section id="profile">
-		<div class="hero">
-			<aside>
-				<img src="{{ avatar }}" alt="">
-			</aside>
-			<article>
-				<h3>{{ name }}</h3>
-				<h4>{{ username }}</h4>
-				<a>Follow</a>
-			</article>
-		</div>
-		<div class="latest posts"><!-- Max 6 results -->
-			<header>
-				<span>Latest posts</span>
-				<a href="/@{{ username }}/posts">All posts &nbsp;&nbsp;&gt;</a>
-			</header>
-			<article>
-				<a href="">
-					<h4>Lorem impsum dolor sit amet.</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					</p>
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h4>Lorem impsum dolor sit amet.</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
-					</p>
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h4>Lorem impsum dolor sit amet.</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
-					</p>
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h4>Lorem impsum dolor sit amet.</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-					</p>
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h4>Lorem impsum dolor sit amet.</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
-					</p>
-				</a>
-			</article>
-			<article>
-				<a href="">
-					<h4>Lorem impsum dolor sit amet.</h4>
-					<p>
-						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat itaque unde, a rerum omnis repellendus ratione similique.
-					</p>
-				</a>
-			</article>
-		</div>
+	<header>
+		<aside>
+			{{> avatar user=user link=false}}
+		</aside>
+		<article>
+			<h3>{{ user.name }}</h3>
+			<h4>{{ user.username }}</h4>
+			{{ #unless isCurrentUser }}
+				<button class="follow {{#if isFollowing}}active{{/if}} btn">
+					{{#if isFollowing}}
+						following
+					{{else}}
+						follow
+					{{/if}}
+				</button>
+			{{ else }}
+				<button class="btn">edit profile</button>
+			{{ /unless }}
+		</article>
+	</header>
+	<section>
+		{{ #each posts }}
+			<!-- posts coming soon -->
+		{{ else }}
+			<p>This user does not have any public posts</p>
+		{{ /each }}
 	</section>
 </template>

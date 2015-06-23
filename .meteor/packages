@@ -11,5 +11,7 @@ wolves:bourbon@2.0.0
 accounts-github
 accounts-ui-unstyled
 fourseven:scss@3.1.1
-momentjs:moment
 mike:mocha
+xolvio:github-fake
+autopublish
+insecure

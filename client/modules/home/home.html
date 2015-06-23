@@ -1,25 +1,52 @@
 <template name="home">
-	<section id="home">
-		{{ #if currentUser }}
-			<section class="hero">
-				<div>
-					<h1>Dashboard</h1>
-				</div>
-			</section>
-		{{ else }}
-			<section class="hero">
-				<div>
-					<h1>Code Glimpse</h1>
-					<h4>A social network for developers, by developers.</h4>
-					<a href="/" class="login">Login or register</a>
-				</div>
-			</section>
-			<section class="segment">
-				<h4>Login or register</h4>
-				<p>
-					We are happy to anounce that users can now register and login using Github!
-				</p>
-			</section>
-		{{ /if }}
-	</section>
+	{{ #unless currentUser }}
+		<header>
+			<h1>Code Glimpse</h1>
+			<h4>A social network for developers, by developers.</h4>
+			<button class="btn login">Login or register</button>
+		</header>
+		<section>
+			<h4>Our users</h4>
+			{{#each users}}
+				{{> avatar size="small" user=this link=true}}
+			{{else}}
+				<p>There are no users</p>
+			{{/each}}
+		</section>
+	{{ else }}
+		{{ >dashboard }}
+	{{ /unless }}
+</template>
+
+<template name="dashboard">
+	<header class="dashboard">
+		<h4>People you follow</h4>
+		<div class="users">
+			{{#each followers}}
+				{{> avatar size="small" user=this link=true}}
+			{{else}}
+				<p>You aren't following anybody yet.</p>
+			{{/each}}
+		</div>
+	</header>
+</template>
+
+<template name="avatar">
+	{{#if link}}
+		<a class="avatar" href="/{{ user.username}}" data-name="{{ user.name }}">
+			<img
+				class="{{ size }}"
+				src="{{ user.avatar }}"
+				alt=""
+			>
+		</a>
+	{{else}}
+		<div class="avatar">
+			<img
+				class="{{ size }}"
+				src="{{ user.avatar }}"
+				alt=""
+			>
+		</div>
+	{{/if}}
 </template>
