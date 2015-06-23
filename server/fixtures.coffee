@@ -1,15 +1,15 @@
 Meteor.startup ->
 	if Meteor.users.find().count() is 0
 		users = [{
-			name:     'Stephan de Vries',
+			name:     'John Doe',
 			email:    '',
-			avatar:   'https://avatars0.githubusercontent.com/u/4006802?v=3&s=460',
-			username: 'stephan281094'
+			avatar:   '/images/avatar_john.jpg',
+			username: 'johndoe'
 		}, {
-			name:     'Roy',
+			name:     'Jane Doe',
 			email:    '',
-			avatar:   'https://avatars0.githubusercontent.com/u/6282765?v=3&s=460',
-			username: 'AwesomeRoy'
+			avatar:   '/images/avatar_jane.jpg',
+			username: 'janedoe'
 		}]
 
 		_.each users, (user) ->
