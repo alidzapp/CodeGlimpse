@@ -32,16 +32,6 @@ Template.nav.events
 		menu = new Menu()
 		menu.toggle()
 
-Template.layout.rendered = ->
-	$window = $(window)
-	$nav    = $('nav')
-
-	$window.scroll ->
-		if $window.scrollTop() <= 0
-			$nav.addClass('fixed')
-		else
-			$nav.removeClass('fixed')
-
 Menu = () ->
 	$applicationContent = $('.applicationContent')
 	className           = 'menu-open'

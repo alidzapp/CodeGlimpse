@@ -175,6 +175,8 @@
             lock = true
             parent = target.parentNode
 
+            Session.set('navigationOpen', false);
+
             var p     = target.getBoundingClientRect(),
                 scale = Math.min(options.maxWidth / p.width, options.maxHeight / p.height),
                 dx    = p.left - (window.innerWidth - p.width) / 2,
@@ -242,6 +244,8 @@
 
             if (!shown || lock) return
             lock = true
+
+            Session.set('navigationOpen', true);
 
             var p  = placeholder.getBoundingClientRect(),
                 dx = p.left - (window.innerWidth - p.width) / 2,

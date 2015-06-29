@@ -41,6 +41,7 @@ main {
     height: 100%;
     min-height: 100vh;
     overflow: hidden;
+    background-color: #fff;
 
     padding-top: $nav-height;
     @include display(flex);
