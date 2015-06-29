@@ -171,6 +171,8 @@
                 ? document.querySelector(el)
                 : el
 
+            Session.set('navigationVisible', false);
+
             shown = true
             lock = true
             parent = target.parentNode
@@ -242,6 +244,8 @@
 
             if (!shown || lock) return
             lock = true
+
+            Session.set('navigationVisible', true);
 
             var p  = placeholder.getBoundingClientRect(),
                 dx = p.left - (window.innerWidth - p.width) / 2,

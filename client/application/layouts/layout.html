@@ -7,7 +7,7 @@
 	<div class="applicationContent">
 		{{>nav logo="Code Glimpse" items=menuItems}}
 		<main id="{{ template }}">
-			{{ >yield }}
+			{{> Template.dynamic template=content}}
 		</main>
 	</div>
 	<div class="applicationMenu">

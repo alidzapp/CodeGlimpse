@@ -1,6 +1,6 @@
 Template.layout.helpers
 	template: ->
-		Router.current().route.getName()
+		FlowRouter.getRouteName()
 	menuItems: ->
 		[
 			'home': '/'
@@ -32,17 +32,7 @@ Template.nav.events
 		menu = new Menu()
 		menu.toggle()
 
-Template.layout.rendered = ->
-	$window = $(window)
-	$nav    = $('nav')
-
-	$window.scroll ->
-		if $window.scrollTop() <= 0
-			$nav.addClass('fixed')
-		else
-			$nav.removeClass('fixed')
-
-Menu = () ->
+Menu = ->
 	$applicationContent = $('.applicationContent')
 	className           = 'menu-open'
 
