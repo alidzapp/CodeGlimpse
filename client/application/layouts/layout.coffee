@@ -7,6 +7,8 @@ Template.layout.helpers
 			'profile': '/profile'
 			'logout': '/logout'
 		]
+	menuVisible: ->
+		Session.get('menuVisible')
 
 Template.layout.events
 	'click .login': (event, template) ->
