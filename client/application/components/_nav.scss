@@ -10,7 +10,7 @@
     @include user-select(none);
     @include transition(.4s);
 
-    &.invisible {
+    &.nav-visible {
         opacity: 0;
         @include transform(translateY(-100%));
     }

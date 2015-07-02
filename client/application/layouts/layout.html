@@ -4,8 +4,19 @@
 </head>
 <template name="layout">
 	<div class="notifications"></div>
-	<div class="applicationContent">
-		{{>nav logo="Code Glimpse" items=menuItems}}
+	<div class="applicationContent {{ menuVisible }}">
+		<nav class="nav {{ navigationVisible }}">
+			<a href="/" class="logo">Code Glimpse</a>
+			<button class="menu-toggler">
+				<span>Menu</span>
+			</button>
+
+			{{ #if currentUser }}
+				<a href="/{{ currentUser.username }}">{{ currentUser.username }}</a>
+			{{ else }}
+				<a class="login">Login</a>
+			{{ /if}}
+		</nav>
 		<main id="{{ template }}">
 			{{ >yield }}
 		</main>
