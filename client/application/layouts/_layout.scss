@@ -75,7 +75,7 @@ main > header, main > section {
     @include transition(.4s);
 }
 
-.applicationContent.menu-open {
+.applicationContent.menu-visible {
     @include transform(translate3d(40%, 0, 0) scale3d(0.85, 0.85, 1));
 }
 
@@ -95,7 +95,7 @@ main > header, main > section {
     @include transition(.6s);
 }
 
-.applicationContent.menu-open + .applicationMenu {
+.applicationContent.menu-visible + .applicationMenu {
     opacity: 1;
     @include transform(scale3d(1, 1, 1));
 }

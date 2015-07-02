@@ -1,4 +1,4 @@
 Meteor.subscribe 'allUsers'
 
 Session.setDefault('navigationVisible', true)
-Session.setDefault('menuVisible', true)
+Session.setDefault('menuVisible', false)
