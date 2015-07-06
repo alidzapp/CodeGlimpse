@@ -9,9 +9,9 @@ Template.profile.helpers
 Template.profile.rendered = ->
 	Zoomerang.config({
 		onBeforeOpen: ->
-			Session.set('navigationOpen', false)
+			Session.set('navigationVisible', false)
 		onBeforeClose: ->
-			Session.set('navigationOpen', true)
+			Session.set('navigationVisible', true)
 	})
 
 	Zoomerang.listen('#profile header .avatar img')

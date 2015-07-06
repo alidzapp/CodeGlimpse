@@ -5,7 +5,7 @@ Template.layout.helpers
 	menuVisible: ->
 		'menu-visible' if Session.get('menuVisible')
 
-	navigationOpen: ->
+	navigationVisible: ->
 		'nav-invisible' if not Session.get('navigationVisible')
 
 Template.layout.events
