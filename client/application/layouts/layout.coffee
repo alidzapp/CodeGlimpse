@@ -18,8 +18,9 @@ Template.layout.events
 		Meteor.logout()
 
 	'click .applicationContent.menu-visible': (event, template) ->
+		event.preventDefault()
+
 		if not $(event.target).hasClass 'menu-toggler'
-			event.preventDefault()
 			Session.set('menuVisible', false)
 
 	'click .applicationMenu a': (event, template) ->
