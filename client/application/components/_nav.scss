@@ -1,6 +1,5 @@
 .nav {
-    left: 0;
-    top: 0;
+    position: absolute;
     width: 100%;
     height: $nav-height;
     background-color: $color-white;
@@ -11,17 +10,9 @@
     @include user-select(none);
     @include transition(.4s);
 
-    &.invisible {
+    &.nav-visible {
         opacity: 0;
         @include transform(translateY(-100%));
-    }
-
-    &.fixed {
-        // position: fixed;
-    }
-
-    &:not(.fixed) {
-        position: absolute;
     }
 
     .logo {
@@ -93,7 +84,7 @@
         float: left;
         cursor: pointer;
         padding-left: 1.5rem;
-        background: url('/images/icon-menu.svg') no-repeat;
+        background: url('/icons/icon-menu.svg') no-repeat;
         background-size: 18px $nav-height;
     }
 

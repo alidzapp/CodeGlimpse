@@ -31,7 +31,9 @@
         maxWidth: 300,
         maxHeight: 300,
         onOpen: null,
-        onClose: null
+        onClose: null,
+        onBeforeClose: null,
+        onBeforeOpen: null
     }
 
     // compatibility stuff
@@ -171,7 +173,8 @@
                 ? document.querySelector(el)
                 : el
 
-            Session.set('navigationVisible', false);
+            // onBeforeOpen event
+            if (options.onBeforeOpen) options.onBeforeOpen(target)
 
             shown = true
             lock = true
@@ -245,7 +248,8 @@
             if (!shown || lock) return
             lock = true
 
-            Session.set('navigationVisible', true);
+            // onBeforeClose event
+            if (options.onBeforeClose) options.onBeforeClose(target)
 
             var p  = placeholder.getBoundingClientRect(),
                 dx = p.left - (window.innerWidth - p.width) / 2,

@@ -7,6 +7,13 @@ Template.profile.helpers
 		getFollower()
 
 Template.profile.rendered = ->
+	Zoomerang.config({
+		onBeforeOpen: ->
+			Session.set('navigationOpen', false)
+		onBeforeClose: ->
+			Session.set('navigationOpen', true)
+	})
+
 	Zoomerang.listen('#profile header .avatar img')
 
 Template.profile.events

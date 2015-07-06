@@ -1,12 +1,12 @@
 Template.layout.helpers
 	template: ->
 		FlowRouter.getRouteName()
-	menuItems: ->
-		[
-			'home': '/'
-			'profile': '/profile'
-			'logout': '/logout'
-		]
+
+	menuVisible: ->
+		'menu-visible' if Session.get('menuVisible')
+
+	navigationOpen: ->
+		'nav-invisible' if not Session.get('navigationVisible')
 
 Template.layout.events
 	'click .login': (event, template) ->
@@ -17,30 +17,13 @@ Template.layout.events
 	'click .logout': (event, template) ->
 		Meteor.logout()
 
-	'click .applicationContent.menu-open': (event, template) ->
+	'click .applicationContent.menu-visible': (event, template) ->
 		if not $(event.target).hasClass 'menu-toggler'
 			event.preventDefault()
-			menu = new Menu()
-			menu.close()
+			Session.set('menuVisible', false)
 
 	'click .applicationMenu a': (event, template) ->
-		menu = new Menu()
-		menu.close()
+		Session.set('menuVisible', false)
 
-Template.nav.events
 	'click .menu-toggler': (event, template) ->
-		menu = new Menu()
-		menu.toggle()
-
-Menu = ->
-	$applicationContent = $('.applicationContent')
-	className           = 'menu-open'
-
-	close: ->
-		$applicationContent.removeClass(className)
-
-	open: ->
-		$applicationContent.addClass(className)
-
-	toggle: ->
-		$applicationContent.toggleClass(className)
+		Session.set('menuVisible', not Session.get('menuVisible'))
