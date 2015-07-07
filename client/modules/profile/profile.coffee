@@ -41,7 +41,7 @@ Template.profile.events
 # Private functions --------------------------------
 currentUser = ->
 	Meteor.users.findOne({
-		username: FlowRouter.current().params.username
+		username: FlowRouter.getParam('username')
 	})
 
 isCurrentUser = ->
