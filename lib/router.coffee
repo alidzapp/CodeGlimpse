@@ -8,7 +8,7 @@ FlowRouter.route '/',
 FlowRouter.route '/logout',
 	action: ->
 		Meteor.logout()
-		redirect('/')
+		FlowRouter.go('/')
 
 FlowRouter.route '/:username',
 	action: ->
