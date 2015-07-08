@@ -6,12 +6,12 @@
 
 meteor-platform
 coffeescript
-iron:router
 wolves:bourbon@2.0.0
 accounts-github
 accounts-ui-unstyled
 fourseven:scss@3.1.1
-mike:mocha
 xolvio:github-fake
 autopublish
 insecure
+meteorhacks:flow-router
+meteorhacks:flow-layout

@@ -18,7 +18,7 @@ Template.profile.rendered = ->
 
 Template.profile.events
 	'click .follow': (event, template) ->
-		if not isCurrentUser()
+		if Meteor.user() and not isCurrentUser()
 			follower = getFollower()
 
 			if follower
@@ -30,18 +30,29 @@ Template.profile.events
 					userId: Meteor.user()._id,
 					follower: currentUser()._id
 				})
+		else
+			# Replace with notification system
+			console.warn("There's no signed in user or user tries to follow himself")
+
+	'click .edit-profile': (event, template) ->
+		# Replace with notification system
+		console.warn("This functionality is not implemented yet")
 
 # Private functions --------------------------------
 currentUser = ->
 	Meteor.users.findOne({
-		username: Router.current().params.username
+		username: FlowRouter.getParam('username')
 	})
 
 isCurrentUser = ->
-	currentUser()._id is Meteor.user()._id
+	if currentUser()
+		currentUser()._id is Meteor.userId()
 
 getFollower = ->
-	Followers.findOne({
-		userId: Meteor.user()._id,
-		follower: currentUser()._id
-	})
+	if Meteor.user()
+		Followers.findOne({
+			userId: Meteor.user()._id,
+			follower: currentUser()._id
+		})
+	else
+		false

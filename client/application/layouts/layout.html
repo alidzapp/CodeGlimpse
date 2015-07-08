@@ -18,7 +18,7 @@
 			{{ /if}}
 		</nav>
 		<main id="{{ template }}">
-			{{ >yield }}
+			{{> Template.dynamic template=content}}
 		</main>
 	</div>
 	<div class="applicationMenu">
