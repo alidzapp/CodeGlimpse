@@ -66,7 +66,8 @@ main > section {
 
 main > header, main > section {
     padding: 4.5rem 20%;
-    @include flexbox;
+    @include display(flex);
+    @include flex-wrap(wrap);
 }
 
 .applicationContent {
