@@ -33,20 +33,12 @@
 
 <template name="avatar">
 	{{#if link}}
-		<a class="avatar" href="/{{ user.username}}" data-name="{{ user.name }}">
-			<img
-				class="{{ size }}"
-				src="{{ user.avatar }}"
-				alt=""
-			>
+		<a class="avatar" href="/{{ user.username}}" data-name="{{ user.username }}">
+			<img class="{{ size }}" src="{{ user.avatar }}" alt="">
 		</a>
 	{{else}}
 		<div class="avatar">
-			<img
-				class="{{ size }}"
-				src="{{ user.avatar }}"
-				alt=""
-			>
+			<img class="{{ size }}" src="{{ user.avatar }}" alt="">
 		</div>
 	{{/if}}
 </template>
