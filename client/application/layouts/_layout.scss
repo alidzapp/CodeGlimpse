@@ -15,6 +15,11 @@ body {
     font-weight: 100;
     overflow-x: hidden;
 
+    &.no-scroll {
+        overflow: hidden;
+    }
+
+
     @include selection {
         color: #fff;
         background-color: rgba($color-primary, 0.5);
