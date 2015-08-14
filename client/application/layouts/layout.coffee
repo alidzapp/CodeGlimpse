@@ -22,9 +22,12 @@ Template.layout.events
 
 		if not $(event.target).hasClass 'menu-toggler'
 			Session.set('menuVisible', false)
+			document.querySelector('body').classList.remove('no-scroll')
 
 	'click .applicationMenu a': (event, template) ->
 		Session.set('menuVisible', false)
 
 	'click .menu-toggler': (event, template) ->
 		Session.set('menuVisible', not Session.get('menuVisible'))
+
+		document.querySelector('body').classList.toggle('no-scroll')
