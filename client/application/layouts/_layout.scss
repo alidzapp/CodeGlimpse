@@ -1,142 +1,144 @@
 * {
-    &, &:before, &:after {
-        box-sizing: border-box;
-    }
+  &, &:before, &:after {
+    box-sizing: border-box;
+  }
 }
 
 body {
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    min-height: 100vh;
-    background-color: #ccc;
-    font-family: sans-serif;
-    font-weight: 100;
-    overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+  background-color: #ccc;
+  font-family: sans-serif;
+  font-weight: 100;
+  overflow-x: hidden;
 
-    &.no-scroll {
-        overflow: hidden;
-    }
+  &.no-scroll {
+    overflow: hidden;
+  }
 
-
-    @include selection {
-        color: #fff;
-        background-color: rgba($color-primary, 0.5);
-    }
+  @include selection {
+    color: #fff;
+    background-color: rgba($color-primary, 0.5);
+  }
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 
-    &, li {
-        padding: 0;
-        margin: 0;
-    }
+  &, li {
+    padding: 0;
+    margin: 0;
+  }
 }
 
 img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    @include user-select(none);
+  width: 100%;
+  height: 100%;
+  display: block;
+  @include user-select(none);
 }
 
 main {
-    height: 100%;
-    min-height: 100vh;
-    overflow: hidden;
-    background-color: #fff;
-    padding-top: $nav-height;
-    @include display(flex);
-    @include flex-direction(column);
+  height: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  background-color: #fff;
+  padding-top: $nav-height;
+  @include display(flex);
+  @include flex-direction(column);
 }
 
 main > header {
-    background-color: #fff;
-    width: 100vw;
-    @include flex-direction(row);
-    @include justify-content(center);
-    @include align-items(center);
+  background-color: #fff;
+  width: 100vw;
+  @include flex-direction(row);
+  @include justify-content(center);
+  @include align-items(center);
 }
 
 main > section {
-    text-align: center;
-    @include flex(1);
-    @include flex-direction(column);
-    @include justify-content(center);
-    background-color: $color-background;
+  text-align: center;
+  @include flex(1);
+  @include flex-direction(column);
+  @include justify-content(center);
+  background-color: $color-background;
 }
 
 main > header, main > section {
-    padding: 4.5rem 20%;
-    @include display(flex);
-    @include flex-wrap(wrap);
+  padding: 4.5rem 20%;
+  @include display(flex);
+  @include flex-wrap(wrap);
 }
 
 .applicationContent {
-    position: relative;
-    z-index: 1;
-    @include transition(.4s);
+  position: relative;
+  @include transition(0.4s);
 }
 
 .applicationContent.menu-visible {
-    @include transform(translate3d(40%, 0, 0) scale3d(0.85, 0.85, 1));
+  @include transform(translate3d(40%, 0, 0) scale3d(0.85, 0.85, 1));
 }
 
 .applicationMenu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 40vw;
-    height: 100vh;
-    z-index: 0;
-    opacity: 0;
-    @include transform(scale3d(.5, .5, .5));
-    @include display(flex);
-    @include flex-direction(column);
-    @include align-items(center);
-    @include flex-wrap(wrap);
-    @include transition(.6s);
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 40vw;
+  height: 100vh;
+  z-index: 0;
+  opacity: 0;
+  visibility: hidden;
+  @include transform(scale3d(0.5, 0.5, 0.5));
+  @include display(flex);
+  @include flex-direction(column);
+  @include align-items(center);
+  @include flex-wrap(wrap);
+  @include transition(0.6s);
 }
 
 .applicationContent.menu-visible + .applicationMenu {
-    opacity: 1;
-    @include transform(scale3d(1, 1, 1));
+  opacity: 1;
+  visibility: visible;
+  @include transform(scale3d(1, 1, 1));
 }
 
 .applicationMenu ul {
-    margin: auto;
-    min-width: 20vw;
+  margin: auto;
+  min-width: 20vw;
 }
 
 .applicationMenu li {
-    font-size: 2rem;
+  font-size: 2rem;
 
-    a {
-        padding: 1rem;
-        width: 100%;
-        color: #444;
-        text-decoration: none;
-        @include transition(.1s);
+  a {
+    padding: 1rem;
+    width: 100%;
+    color: #444;
+    text-decoration: none;
+    @include transition(0.1s);
 
-        &:hover {
-            border-radius: 2px;
-            padding-left: 1.5rem;
-            background-color: #f2f2f2;
-        }
+    &:hover {
+      border-radius: 2px;
+      padding-left: 1.5rem;
+      background-color: #f2f2f2;
     }
+  }
 }
 
 @media #{$tablet-width} {
-    header, section {
-        padding: 4.5rem 10%;
-    }
+
+  header, section {
+    padding: 4.5rem 10%;
+  }
 }
 
 @media #{$phone-width} {
-    header, section {
-        padding: 4.5rem 5%;
-        @include flex-direction(column);
-    }
+
+  header, section {
+    padding: 4.5rem 5%;
+    @include flex-direction(column);
+  }
 }

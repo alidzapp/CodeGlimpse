@@ -6,16 +6,6 @@ Template.profile.helpers
 	isFollowing: ->
 		getFollower()
 
-Template.profile.rendered = ->
-	Zoomerang.config({
-		onBeforeOpen: ->
-			Session.set('navigationVisible', false)
-		onBeforeClose: ->
-			Session.set('navigationVisible', true)
-	})
-
-	Zoomerang.listen('#profile header .avatar img')
-
 Template.profile.events
 	'click .follow': (event, template) ->
 		if Meteor.user() and not isCurrentUser()
