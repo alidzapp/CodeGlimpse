@@ -23,5 +23,5 @@
 
 // Disable text selection of velocity status
 #velocity-status-widget {
-	@include user-select(none);
+  @include user-select(none);
 }

@@ -1,7 +1,9 @@
 <template name="profile">
 	<header>
 		<aside>
-			{{> avatar user=user link=false}}
+			<div class="avatar">
+				<img src="{{ user.avatar }}" alt="" data-action="zoom">
+			</div>
 		</aside>
 		<article>
 			<h3>{{ user.name }}</h3>
