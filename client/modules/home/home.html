@@ -30,7 +30,14 @@
 		</article>
 	</header>
 	<section>
-
+		<h3>Posts</h3>
+		<ul>
+			{{#each posts}}
+				{{> avatar size="mini" user=user link=true}}
+				<a href="{{ user.username }}">{{ user.name }}</a>
+				<p>{{ message }}</p>
+			{{/each}}
+		</ul>
 	</section>
 </template>
 
