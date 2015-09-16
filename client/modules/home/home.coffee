@@ -12,3 +12,6 @@ Template.dashboard.helpers
 Template.home.helpers
 	users: ->
 		Meteor.users.find({})
+
+Template.dashboard.rendered = () ->
+	$('input#status').focus()

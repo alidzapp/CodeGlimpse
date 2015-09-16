@@ -8,9 +8,8 @@
   height: 12.5rem;
   display: block;
   border-radius: 50%;
-  background-color: #00cdaa;
   @include transition(0.1s);
-  // @include backface-visibility(hidden);
+  @include backface-visibility(hidden);
 
   &.small {
     width: 6rem;
