@@ -20,15 +20,25 @@
 
 <template name="dashboard">
 	<header class="dashboard">
-		<h4>People you follow</h4>
-		<div class="users">
-			{{#each followers}}
-				{{> avatar size="small" user=this link=true}}
-			{{else}}
-				<p>You aren't following anybody yet.</p>
-			{{/each}}
-		</div>
+		<aside>
+			<div class="avatar">
+				<a href="/{{ currentUser.username }}"><img src="{{ currentUser.avatar }}" alt=""></a>
+			</div>
+		</aside>
+		<article>
+			<input id="status" type="text" placeholder="What's on your mind?" autofocus>
+		</article>
 	</header>
+	<section>
+		<h3>Posts</h3>
+		<ul>
+			{{#each posts}}
+				{{> avatar size="mini" user=user link=true}}
+				<a href="{{ user.username }}">{{ user.name }}</a>
+				<p>{{ message }}</p>
+			{{/each}}
+		</ul>
+	</section>
 </template>
 
 <template name="avatar">
