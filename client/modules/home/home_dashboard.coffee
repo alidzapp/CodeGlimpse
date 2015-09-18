@@ -1,4 +1,4 @@
-Template.dashboard.helpers
+Template.home_dashboard.helpers
   followers: ->
     followers = Followers.find({
       userId: Meteor.user()._id
@@ -16,14 +16,10 @@ Template.dashboard.helpers
 
     posts
 
-Template.home.helpers
-  users: ->
-    Meteor.users.find({})
-
-Template.dashboard.rendered = () ->
+Template.home_dashboard.rendered = ->
   $('input#status').focus()
 
-Template.dashboard.events
+Template.home_dashboard.events
   'keyup input[type="text"]': (event, template) ->
     if (event.which is 13)
       input = template.find('#status')
