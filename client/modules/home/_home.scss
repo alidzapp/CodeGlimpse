@@ -1,68 +1,16 @@
 #home {
+  // Shared styles
   header {
-    text-align: center;
     background: #fff;
-    @include flex(1);
-    @include flex-direction(column);
-
-    &.dashboard {
-      text-align: left;
-      @include flex(0);
-      @include flex-direction(row);
-
-      .avatar img {
-        width: 100px;
-        height: 100px;
-      }
-
-      article {
-        margin-left: 4.5rem;
-        @include flex(1);
-        @include flex-direction(row);
-      }
-
-      input {
-        outline: 0;
-        border: 0;
-        color: #333;
-        font-family: $font-default;
-        font-weight: 200;
-        @include font-size(2rem);
-        @include font-smoothing;
-
-        &::-webkit-input-placeholder,
-        &:-moz-input-placeholder,
-        &::-moz-input-placeholder,
-        &:-ms-input-placeholder {
-          color: #aaa;
-        }
-      }
-    }
-
-    &:not(.dashboard) {
-      min-height: 80vh;
-
-      button {
-        margin: 10vh auto 0;
-      }
-    }
   }
 
   section {
     @include flex(1);
-  }
-
-  section, .users {
     @include flex-direction(row);
     @include flex-wrap(wrap);
     @include align-items(center);
   }
-
-  .avatar {
-    margin: 0 1rem;
-  }
-}
-
-#home.dashboard section {
-  text-align: left;
+  // Custom styles
+  @import "home_dashboard";
+  @import "home_default";
 }

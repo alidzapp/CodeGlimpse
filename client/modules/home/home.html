@@ -1,54 +1,7 @@
 <template name="home">
-	{{ #unless currentUser }}
-		<header>
-			<h1>Code Glimpse</h1>
-			<h4>A social network for developers, by developers.</h4>
-			<button class="btn login">Login or register</button>
-		</header>
-		<section>
-			<h4>Our users</h4>
-			{{#each users}}
-				{{> avatar size="small" user=this link=true}}
-			{{else}}
-				<p>There are no users</p>
-			{{/each}}
-		</section>
-	{{ else }}
-		{{ >dashboard }}
-	{{ /unless }}
-</template>
-
-<template name="dashboard">
-	<header class="dashboard">
-		<aside>
-			<div class="avatar">
-				<a href="/{{ currentUser.username }}"><img src="{{ currentUser.avatar }}" alt=""></a>
-			</div>
-		</aside>
-		<article>
-			<input id="status" type="text" placeholder="What's on your mind?" autofocus>
-		</article>
-	</header>
-	<section>
-		<h3>Posts</h3>
-		<ul>
-			{{#each posts}}
-				{{> avatar size="mini" user=user link=true}}
-				<a href="{{ user.username }}">{{ user.name }}</a>
-				<p>{{ message }}</p>
-			{{/each}}
-		</ul>
-	</section>
-</template>
-
-<template name="avatar">
-	{{#if link}}
-		<a class="avatar" href="/{{ user.username}}" data-name="{{ user.username }}">
-			<img class="{{ size }}" src="{{ user.avatar }}" alt="">
-		</a>
-	{{else}}
-		<div class="avatar">
-			<img class="{{ size }}" src="{{ user.avatar }}" alt="">
-		</div>
-	{{/if}}
+  {{#if currentUser}}
+    {{> home_dashboard}}
+  {{else}}
+    {{> home_default}}
+  {{/if}}
 </template>

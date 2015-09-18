@@ -128,17 +128,30 @@ main > header, main > section {
   }
 }
 
+.soft-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  @include flex(1);
+  @include display(flex);
+  @include flex-direction(column);
+}
+
+header, section {
+  padding: 1rem 12.5%;
+}
+
 @media #{$tablet-width} {
 
   header, section {
-    padding: 4.5rem 10%;
+    padding: 1rem 10%;
   }
 }
 
 @media #{$phone-width} {
 
   header, section {
-    padding: 4.5rem 5%;
+    padding: 1rem 5%;
     @include flex-direction(column);
   }
 }

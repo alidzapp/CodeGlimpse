@@ -1,0 +1,17 @@
+<template name="home_default">
+  <div class="soft-wrapper home-default">
+    <header>
+      <h1>Code Glimpse</h1>
+      <h4>A social network for developers, by developers.</h4>
+      <button class="btn login">Login or register</button>
+    </header>
+    <section>
+      <h4>Our users</h4>
+      {{#each users}}
+        {{> avatar size="small" user=this}}
+      {{else}}
+        <p>There are no users</p>
+      {{/each}}
+    </section>
+  </div>
+</template>
