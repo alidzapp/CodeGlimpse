@@ -13,6 +13,7 @@ fourseven:scss@3.1.1
 xolvio:github-fake
 autopublish
 insecure
-meteorhacks:flow-router
-meteorhacks:flow-layout
 inno:zoom
+react
+kadira:flow-router
+kadira:react-layout
