@@ -1,3 +1,7 @@
+// vendors
+@import
+  "bourbon/bourbon";
+
 @import
   "utils/variables",
   "utils/functions",
@@ -18,7 +22,7 @@
   "layout/forms";
 
 @import
-  "components/buttons",
+  "components/button",
   "components/dropdown";
 
 @import
