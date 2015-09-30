@@ -1,0 +1,99 @@
+$height-nav: 4rem;
+$color-white: rgba(255, 255, 255, 1);
+$font-default: "lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$transition-speed: 0.35s;
+
+.nav {
+  position: absolute;
+  width: 100%;
+  height: $height-nav;
+  background-color: $color-white;
+  font-family: $font-default;
+  overflow: hidden;
+  padding: 0 1rem;
+  @include user-select(none);
+  @include transition($transition-speed);
+
+  .logo {
+    position: absolute;
+    left: 50%;
+    margin: 0;
+    padding-left: 5px;
+    height: $height-nav;
+    line-height: $height-nav;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    @include transform(translateX(-50%));
+    @include transition($transition-speed);
+  }
+
+  a, .menu-toggler {
+    height: $height-nav;
+    margin: 0 1rem;
+    line-height: $height-nav;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.9);;
+    cursor: pointer;
+    display: inline-block;
+    opacity: 1;
+    @include transition(opacity $transition-speed);
+  }
+
+  a:not(.logo), .menu-toggler {
+    float: right;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    height: 100%;
+    line-height: $height-nav;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  a:not(.menu-toggler):not(.logo) {
+    position: relative;
+  }
+
+  a:not(.menu-toggler):before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0.75rem;
+    left: 0;
+    background-color: #333;
+    visibility: hidden;
+    opacity: 0;
+    @include transform(scaleX(0));
+    @include transition($transition-speed ease-in-out 0s);
+  }
+
+  a:not(.menu-toggler):hover:before {
+    opacity: 1;
+    visibility: visible;
+    @include transform(scaleX(1));
+  }
+
+  .menu-toggler {
+    float: left;
+    cursor: pointer;
+    padding-left: 1.5rem;
+    background: url(/icons/icon-menu.svg) no-repeat;
+    background-size: 18px $height-nav;
+  }
+
+  .menu-toggler span {
+    opacity: 0;
+    display: block;
+    @include transition($transition-speed);
+  }
+
+  .menu-toggler:hover span {
+    opacity: 1;
+    @include transform(translateX(0.5rem));
+  }
+}

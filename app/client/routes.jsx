@@ -5,6 +5,7 @@ FlowRouter.route('/', {
   },
   action(params) {
     ReactLayout.render(MainLayout, {
+      header: <Header />,
       content: <Home />
     });
   }
